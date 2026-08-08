@@ -4,7 +4,7 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>BDAI LMS 운영진 소개 메뉴얼</title>
-  <meta name="description" content="bdai.co.kr 상단 탭 기준으로 정리한 BDAI LMS 운영진 소개 메뉴얼" />
+  <meta name="description" content="bdai.co.kr 상단 탭 기준 BDAI LMS 운영진 소개 메뉴얼" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,56 +18,54 @@
   <div class="shell">
     <aside class="nav" aria-label="목차">
       <a class="brand" href="#top">BDAI Ops Manual</a>
-      <p class="brand-sub">운영진 소개 · v0.5 · bdai.co.kr 탭</p>
-      <input id="manual-search" class="nav-search" type="search" placeholder="검색 (정규반, knock…)" aria-label="메뉴얼 검색" />
+      <p class="brand-sub">운영진 소개 · v0.6</p>
+      <input id="manual-search" class="nav-search" type="search" placeholder="검색 (정규반, 출석…)" aria-label="메뉴얼 검색" />
       <ol>
-        <li><a href="#intro">1. 시작·접속</a></li>
-        <li><a href="#sitemap">2. 사이트 탭 지도</a></li>
-        <li><a href="#tab-bdai">3. B.D.A.I</a></li>
-        <li><a href="#tab-regular">4. 정규반</a></li>
-        <li><a href="#tab-learning">5. Learning</a></li>
-        <li><a href="#tab-knock">6. knock</a></li>
-        <li><a href="#tab-report">7. Report</a></li>
-        <li><a href="#tab-community">8. 커뮤니티</a></li>
-        <li><a href="#tab-me">9. 마이페이지</a></li>
-        <li><a href="#admin">10. 운영 어드민</a></li>
-        <li><a href="#weekly">11. 주간 운영</a></li>
-        <li><a href="#help">12. 문의</a></li>
+        <li><a href="#intro">1. 시작</a></li>
+        <li><a href="#nav">2. 상단 탭</a></li>
+        <li><a href="#dashboard">3. 대시보드</a></li>
+        <li><a href="#tab-bdai">4. B.D.A.I</a></li>
+        <li><a href="#tab-regular">5. 정규반</a></li>
+        <li><a href="#tab-learning">6. Learning</a></li>
+        <li><a href="#tab-knock">7. knock</a></li>
+        <li><a href="#tab-report">8. Report</a></li>
+        <li><a href="#tab-community">9. 커뮤니티</a></li>
+        <li><a href="#tab-me">10. 마이페이지</a></li>
+        <li><a href="#admin">11. 운영 어드민</a></li>
+        <li><a href="#weekly">12. 주간 운영</a></li>
+        <li><a href="#help">13. 문의</a></li>
       </ol>
     </aside>
 
     <main id="main" class="main">
       <header class="hero" id="top">
-        <div class="kicker">bdai.co.kr · Operator Manual</div>
-        <h1>사이트 상단 탭으로<br />LMS를 이해하는 메뉴얼</h1>
+        <div class="kicker">bdai.co.kr · v0.6</div>
+        <h1>사이트 화면으로 보는<br />운영진 메뉴얼</h1>
         <p>
-          학회원이 쓰는 <strong>bdai.co.kr</strong> 메뉴를 기준으로,
-          각 탭이 무엇을 위한 화면인지, 운영진이 어드민에서 무엇을 관리하는지를 같이 봅니다.
+          학회원·현직자가 쓰는 <strong>bdai.co.kr 상단 탭</strong>을 기준으로,
+          각 화면이 무엇을 보여 주는지와 운영진이 어드민에서 무엇을 관리하는지를 정리합니다.
         </p>
         <div class="meta-row">
           <span class="pill">대상: 신규 운영진</span>
-          <span class="pill">버전: v0.5</span>
-          <span class="pill">기준: 사이트 상단 탭</span>
+          <span class="pill">화면: 실제 LMS 캡처</span>
+          <span class="pill">어드민: 공용 계정</span>
         </div>
       </header>
 
-      <!-- 1 -->
-      <section id="intro" data-search="시작 접속 공용계정 슬랙 어드민">
-        <h2>1. 시작·접속</h2>
-        <div class="prose">
+      <section id="intro" data-search="시작 접속 공용계정">
+        <h2>1. 시작</h2>
+        <div class="purpose">
+          <span class="label">운영진이 알아야 할 구조</span>
           <p>
-            LMS에는 학회원 화면(bdai.co.kr)과 운영 어드민(<code>/admin/</code>)이 있습니다.
-            운영진은 학회원 화면으로 “무엇이 보이는지”를 이해하고,
-            어드민에서 그 상태를 반영·승인합니다.
+            LMS는 <strong>사이트(학회원 화면)</strong>와 <strong>운영 어드민</strong>으로 나뉩니다.
+            사이트에서 보이는 상태(분반, 출석, 점수, 공지, 신청)를 어드민에서 만들고 고칩니다.
           </p>
         </div>
         <table>
-          <thead>
-            <tr><th>공간</th><th>용도</th><th>경로</th></tr>
-          </thead>
+          <thead><tr><th>공간</th><th>용도</th><th>경로</th></tr></thead>
           <tbody>
-            <tr><td>학회원 사이트</td><td>수업·공지·knock 등 이용</td><td>bdai.co.kr</td></tr>
-            <tr><td>강사 포털</td><td>담당 분반 지도</td><td><code>/instructor/</code></td></tr>
+            <tr><td>사이트</td><td>수업·공지·knock 등 이용</td><td>bdai.co.kr</td></tr>
+            <tr><td>강사/현직자 포털</td><td>담당 수업·현직자 기능</td><td><code>/instructor/</code></td></tr>
             <tr><td>운영 어드민</td><td>승인·출결·점수·공지 관리</td><td><code>/admin/</code></td></tr>
           </tbody>
         </table>
@@ -78,463 +76,398 @@
           <li>Slack 6자리 인증 입력</li>
         </ol>
         <div class="callout note">
-          운영 어드민은 <strong>공용 계정 하나</strong>로 사용합니다.
-          공유 PC에서는 사용 후 로그아웃. 중요 승인·점수 변경은 팀 채널에 처리자를 남깁니다.
+          운영 어드민은 공용 계정 하나로 사용합니다. 공유 PC에서는 사용 후 로그아웃.
+          중요 승인·점수 변경은 팀 채널에 처리자를 남깁니다.
         </div>
       </section>
 
-      <!-- 2 -->
-      <section id="sitemap" data-search="탭 지도 상단 메뉴 사이트맵">
-        <h2>2. 사이트 탭 지도</h2>
-        <p class="lead">로그인 후 상단에 보이는 메뉴가 이 문서의 목차입니다.</p>
+      <section id="nav" data-search="상단 탭 내비게이션 메뉴">
+        <h2>2. 상단 탭 (사이트 기준)</h2>
+        <p class="lead">로그인 후 상단 메뉴가 이 문서의 목차입니다.</p>
 
-        <figure class="shot">
-          <img src="./assets/img/01_dashboard_topnav.png" alt="bdai.co.kr 대시보드와 상단 내비게이션" width="1440" height="900" loading="eager" />
-          <figcaption>
-            <strong>학회원 대시보드 · 상단 탭</strong> —
-            B.D.A.I / 정규반 / Learning / knock / Report / 커뮤니티 / 마이페이지
-          </figcaption>
+        <figure class="shot shot--nav">
+          <img src="./assets/img/nav_desktop.png" alt="bdai.co.kr 상단 내비게이션" width="1280" height="110" />
+          <figcaption><strong>상단 탭</strong> — B.D.A.I · 정규반 · Learning · knock · Report · 커뮤니티 · (역할에 따라) 현직자 포털 · 마이페이지</figcaption>
         </figure>
 
-        <div class="tab-map">
-          <a href="#tab-bdai">B.D.A.I<small>기업분석·캠퍼스맵</small></a>
-          <a href="#tab-regular">정규반<small>수업·출결·과제</small></a>
-          <a href="#tab-learning">Learning<small>클래스·공모전</small></a>
-          <a href="#tab-knock">knock<small>커피챗·채용</small></a>
-          <a href="#tab-report">Report<small>리포트</small></a>
-          <a href="#tab-community">커뮤니티<small>공지·QnA</small></a>
-          <a href="#tab-me">마이페이지<small>계정·스탬프</small></a>
-          <a href="#admin">운영 어드민<small>관리 콘솔</small></a>
+        <table>
+          <thead><tr><th>탭</th><th>학회원에게</th><th>운영진 핵심</th></tr></thead>
+          <tbody>
+            <tr><td><strong>B.D.A.I</strong></td><td>기업분석·캠퍼스맵</td><td>담당 시 운영</td></tr>
+            <tr><td><strong>정규반</strong></td><td>수업·출결·과제·점수</td><td>주간 운영의 중심</td></tr>
+            <tr><td><strong>Learning</strong></td><td>클래스·공모전 등</td><td>심사·입금·콘텐츠</td></tr>
+            <tr><td><strong>knock</strong></td><td>커피챗·채용·질문 등</td><td>담당 시 운영</td></tr>
+            <tr><td><strong>Report</strong></td><td>리포트 콘텐츠</td><td>콘텐츠 등록</td></tr>
+            <tr><td><strong>커뮤니티</strong></td><td>공지·QnA·게시판</td><td>공지·행사 신청</td></tr>
+            <tr><td><strong>마이페이지</strong></td><td>계정·알림·스탬프</td><td>간접 영향</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="dashboard" data-search="대시보드 나의 정규반 알림">
+        <h2>3. 대시보드 (로그인 홈)</h2>
+        <div class="section-meta">
+          <span>/dashboard/</span>
+          <span>사이트 홈</span>
+        </div>
+        <div class="purpose">
+          <span class="label">화면 목적</span>
+          <p>로그인 직후 요약 화면입니다. 배너·알림·수강 중 분반 바로가기가 모입니다.</p>
+        </div>
+
+        <div class="media-row">
+          <figure class="shot shot--panel">
+            <img src="./assets/img/dashboard.png" alt="대시보드 화면" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>대시보드</strong> — 배너, 알림, 나의 정규반 카드</figcaption>
+          </figure>
+          <div class="aside">
+            <h4>이 화면에서 확인할 것</h4>
+            <ul>
+              <li><strong>알림</strong> — HR 패스, B포인트 등 미확인 건</li>
+              <li><strong>나의 정규반</strong> — 수강 배정된 분반 카드 (출석 요약 포함)</li>
+              <li>분반이 안 보이면 → 회원 승인 또는 수강(Enrollment) 미배정</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <!-- 3 BDAI -->
-      <section id="tab-bdai" data-search="bdai 기업분석 캠퍼스맵 company campus">
-        <h2>3. B.D.A.I</h2>
+      <section id="tab-bdai" data-search="기업분석 캠퍼스맵 bdai">
+        <h2>4. B.D.A.I</h2>
         <div class="section-meta">
-          <span>사이트 탭</span>
-          <span>하위: AI 기업분석 · AI 캠퍼스맵</span>
+          <span>드롭다운</span>
+          <span>AI 기업분석 · AI 캠퍼스맵</span>
         </div>
         <div class="purpose">
           <span class="label">탭 목적</span>
-          <p>
-            취업·학교 생활 정보를 LMS 안에서 보게 하는 영역입니다.
-            기업분석은 기업·직무 리포트와 커피챗 관심 신청,
-            캠퍼스맵은 학교별 맛집·카페·제휴 매장입니다.
-          </p>
+          <p>취업·학교 생활 정보 영역입니다. 정규반 주간 운영과 별도 담당인 경우가 많습니다.</p>
         </div>
-        <table>
-          <thead>
-            <tr><th>하위</th><th>학회원</th><th>운영진 (어드민)</th></tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td>AI 기업분석</td>
-              <td>기업 리포트 열람, 커피챗 관심 신청</td>
-              <td>기업분석 허브 · 커피챗 신청 목록 처리</td>
-            </tr>
-            <tr>
-              <td>AI 캠퍼스맵</td>
-              <td>학교별 장소·리뷰 확인</td>
-              <td>캠퍼스맵 운영 · 제휴 매장 등록</td>
-            </tr>
-          </tbody>
-        </table>
+
+        <div class="media-row">
+          <figure class="shot">
+            <img src="./assets/img/company.png" alt="AI 기업분석" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>AI 기업분석</strong> — 기업·직무 리포트, 커피챗 관심 신청</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="./assets/img/campus.png" alt="AI 캠퍼스맵" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>AI 캠퍼스맵</strong> — 학교별 맛집·카페·제휴</figcaption>
+          </figure>
+        </div>
+
         <div class="ops-box">
-          <h4>운영 시 기억할 점</h4>
+          <h4>어드민</h4>
           <ul>
-            <li>일상 정규반 운영과 별도 담당이 있는 경우가 많습니다.</li>
-            <li>커피챗 “관심 신청”은 knock 공개 일정과 DB가 다를 수 있습니다.</li>
+            <li>왼쪽 탭 <strong>AI 기업분석</strong> / <strong>AI 캠퍼스맵</strong></li>
+            <li>대시보드·지표에도 캠퍼스맵·커피챗 신청 바로가기 있음</li>
           </ul>
         </div>
       </section>
 
-      <!-- 4 Regular -->
-      <section id="tab-regular" data-search="정규반 분반 출결 과제 조별 블로그 수강">
-        <h2>4. 정규반</h2>
+      <section id="tab-regular" data-search="정규반 분반 출결 과제 상벌점 줌">
+        <h2>5. 정규반</h2>
         <div class="section-meta">
-          <span>사이트 탭 · 핵심</span>
-          <span>/regular/</span>
+          <span>핵심 탭</span>
+          <span>/regular/ · /regular/classes/…</span>
         </div>
         <div class="purpose">
           <span class="label">탭 목적</span>
           <p>
-            기수·분반 수업의 홈입니다.
-            수강 배정이 된 회원만 분반 카드·Zoom·과제·출결·점수를 봅니다.
-            운영진 주간 업무의 중심입니다.
+            기수·분반 수업의 중심입니다.
+            캘린더·공지와 분반 상세(총점·출석·과제·Zoom·자료)가 여기에 있습니다.
+            운영진 주간 업무의 대부분이 이 탭과 연결됩니다.
           </p>
         </div>
 
-        <figure class="shot">
-          <img src="./assets/img/02_regular_home.png" alt="정규반 홈 화면" width="1440" height="900" loading="lazy" />
-          <figcaption>
-            <strong>정규반 홈</strong> —
-            수강 중 분반 카드, Zoom, 출결 사유폼, 과제 현황, 조별활동·블로그 챌린지 진입
-          </figcaption>
-        </figure>
+        <h3>5-1. 정규반 홈</h3>
+        <div class="media-row">
+          <figure class="shot shot--panel">
+            <img src="./assets/img/regular_home.png" alt="정규반 홈" width="1280" height="900" loading="lazy" />
+            <figcaption><strong>정규반 홈</strong> — 캘린더, 정규반/조별활동 공지</figcaption>
+          </figure>
+          <div class="aside">
+            <h4>학회원 화면</h4>
+            <ul>
+              <li>수업·일정 캘린더</li>
+              <li>정규반/조별활동 공지 목록</li>
+              <li>분반 진입은 대시보드 「나의 정규반」또는 분반 링크</li>
+            </ul>
+            <h4>운영진</h4>
+            <ul>
+              <li>공지 내용·일정 노출이 맞는지 수업 전 확인</li>
+              <li>어드민: 정규반 / 커뮤니티(공지)</li>
+            </ul>
+          </div>
+        </div>
 
-        <figure class="shot">
-          <img src="./assets/img/03_regular_class.png" alt="분반 상세 화면" width="1440" height="900" loading="lazy" />
-          <figcaption>
-            <strong>분반 상세</strong> —
-            리소스(자료·과제·사유폼), 주차별 과제 제출, 출결·상벌점 확인
-          </figcaption>
-        </figure>
+        <h3>5-2. 분반 상세 (수업·출결·점수)</h3>
+        <div class="media-row">
+          <figure class="shot shot--panel">
+            <img src="./assets/img/regular_class.png" alt="분반 상세" width="1280" height="900" loading="lazy" />
+            <figcaption><strong>분반 상세</strong> — 총점·수료·출석·과제, Zoom/자료 탭</figcaption>
+          </figure>
+          <div class="aside">
+            <h4>학회원에게 보이는 핵심</h4>
+            <ul>
+              <li><strong>내 현재 상태</strong> — 총점(상점/벌점), 수료 여유, 이번 주 출석, 과제 미제출</li>
+              <li><strong>이번 주 해야할 것</strong> — 등록된 과제·수업</li>
+              <li><strong>수업 탭</strong> — Zoom 링크, 수업자료, 노트</li>
+              <li>출결·상벌점 상세 링크</li>
+            </ul>
+          </div>
+        </div>
 
-        <h3>학회원에게 보이는 것</h3>
-        <ul class="compact-list">
-          <li>분반명, 수업 시간, Zoom 링크</li>
-          <li>주차별 과제 제출·출석 상태</li>
-          <li>상점/벌점 총점, 출결 사유폼</li>
-          <li>조별활동 · 블로그 챌린지 (시즌)</li>
-        </ul>
-
-        <h3>운영진이 어드민에서 관리하는 것</h3>
+        <h3>5-3. 운영진이 어드민에서 하는 일</h3>
         <table>
-          <thead>
-            <tr><th>업무</th><th>어드민 위치</th><th>결과</th></tr>
-          </thead>
+          <thead><tr><th>업무</th><th>어드민</th><th>사이트에 반영되는 것</th></tr></thead>
           <tbody>
             <tr>
               <td>회원 승인·유형</td>
               <td>회원·권한</td>
-              <td>포털 이용 가능 여부</td>
+              <td>로그인·이용 가능 여부</td>
             </tr>
             <tr>
-              <td>수강 배정 (Enrollment)</td>
-              <td>일상 운영 / 정규반 → CSV</td>
-              <td>정규반 홈에 분반 노출</td>
+              <td>수강 배정</td>
+              <td>일상 운영 / 정규반 → 정규반 CSV</td>
+              <td>대시보드 「나의 정규반」, 분반 상세 접근</td>
             </tr>
             <tr>
               <td>출석 반영</td>
               <td>일상 운영 → 출석 CSV / 분반 Zoom</td>
-              <td>출결 탭 갱신</td>
+              <td>이번 주 출석, 출결 상세</td>
             </tr>
             <tr>
-              <td>사유폼 검토</td>
+              <td>출결 사유폼 검토</td>
               <td>정규반 → 출결 사유</td>
-              <td>결석·지각 등 정리 (벌점은 시간차 가능)</td>
+              <td>출석 상태·벌점 정리(시간차 가능)</td>
             </tr>
             <tr>
               <td>상벌점</td>
               <td>일상 운영 → 상벌점 CSV</td>
-              <td>총점·수료 기준 반영</td>
+              <td>총점·수료 기준</td>
             </tr>
             <tr>
-              <td>과제</td>
-              <td>정규반 → 과제·제출</td>
-              <td>제출률·미제출 안내</td>
+              <td>과제·자료·Zoom</td>
+              <td>정규반 → 분반/과제</td>
+              <td>수업 탭·이번 주 할 일</td>
             </tr>
             <tr>
-              <td>조별활동 / 블로그</td>
+              <td>조별활동·블로그</td>
               <td>정규반 (시즌)</td>
               <td>팀·스탬프·관련 점수</td>
             </tr>
           </tbody>
         </table>
-
         <div class="callout tip">
-          <strong>출석 vs 상벌점 vs B포인트</strong><br />
-          출석 = 참여 기록 · 상벌점 = 수료용 총점 · B포인트 = 별도 보상 재화(일상 운영에서 지급)
-        </div>
-
-        <figure class="shot">
-          <img src="./assets/img/10_admin_cohort.png" alt="정규반 라인업 어드민 화면" width="1920" height="1080" loading="lazy" />
-          <figcaption>
-            <strong>어드민 · 정규반 라인업</strong> —
-            기수별 분반·강사·주차 구성을 한 표에서 관리
-          </figcaption>
-        </figure>
-      </section>
-
-      <!-- 5 Learning -->
-      <section id="tab-learning" data-search="learning 클래스 공모전 코딩테스트 자격증 수료시험 정부교육">
-        <h2>5. Learning</h2>
-        <div class="section-meta">
-          <span>사이트 탭 · 드롭다운</span>
-          <span>/lectures/</span>
-        </div>
-        <div class="purpose">
-          <span class="label">탭 목적</span>
-          <p>정규반 외 학습 콘텐츠·프로그램 진입점입니다.</p>
-        </div>
-
-        <figure class="shot">
-          <img src="./assets/img/11_learning_contest.png" alt="Learning 공모전 화면" width="390" height="844" loading="lazy" />
-          <figcaption>
-            <strong>Learning · 공모전</strong> —
-            하위: 공모전 · 클래스 · 코딩 테스트 · 자격증 · 수료시험 · 정부교육
-          </figcaption>
-        </figure>
-
-        <table>
-          <thead>
-            <tr><th>하위</th><th>학회원</th><th>운영진</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>클래스</td><td>강의 수강</td><td>강의 심사 · VOD 입금 승인</td></tr>
-            <tr><td>공모전</td><td>공모전 참여·제출</td><td>제출·평가 시트</td></tr>
-            <tr><td>코딩 테스트 / 자격증 / 수료시험</td><td>응시·학습</td><td>문제·시험 출제·기록</td></tr>
-            <tr><td>정부교육</td><td>관련 콘텐츠</td><td>knock 연동 탭으로 관리되는 경우 있음</td></tr>
-          </tbody>
-        </table>
-        <div class="ops-box">
-          <h4>어드민</h4>
-          <ul>
-            <li>왼쪽 탭 <strong>Learning</strong> · 심사/입금 대기는 <strong>일상 운영</strong>에도 모여 있음</li>
-            <li>담당 없는 승인 큐는 임의 처리하지 않음</li>
-          </ul>
+          <strong>출석 / 상벌점 / B포인트</strong><br />
+          출석 = 참여 기록 · 상벌점 = 수료용 총점 · B포인트 = 별도 보상(일상 운영에서 지급)
         </div>
       </section>
 
-      <!-- 6 knock -->
-      <section id="tab-knock" data-search="knock 커피챗 채용 대외활동 picks 질문하기 hr패스">
-        <h2>6. knock</h2>
+      <section id="tab-learning" data-search="learning 공모전 클래스">
+        <h2>6. Learning</h2>
         <div class="section-meta">
-          <span>사이트 탭 · 드롭다운</span>
-          <span>/knock/</span>
+          <span>드롭다운</span>
+          <span>공모전 · 클래스 · 코딩테스트 · 자격증 · 수료시험 · 정부교육</span>
         </div>
         <div class="purpose">
           <span class="label">탭 목적</span>
-          <p>커리어·네트워킹·채용·대외활동 허브입니다. 정규반 수업과는 별 축입니다.</p>
+          <p>정규반 밖 학습 프로그램·콘텐츠 진입점입니다.</p>
         </div>
 
-        <figure class="shot">
-          <img src="./assets/img/04_knock.png" alt="knock 홈 화면" width="1440" height="900" loading="lazy" />
-          <figcaption>
-            <strong>knock</strong> —
-            하위: knock · 질문하기 · 커피챗 · 채용 게시판 · 대외활동 · BDAI Picks
-          </figcaption>
-        </figure>
-
-        <figure class="shot">
-          <img src="./assets/img/05_coffee_chat.png" alt="커피챗 화면" width="1440" height="900" loading="lazy" />
-          <figcaption>
-            <strong>커피챗</strong> —
-            일정·리뷰·매칭 관련 화면. 운영은 어드민 Knock / 커피챗·신청 목록에서 처리
-          </figcaption>
-        </figure>
-
-        <table>
-          <thead>
-            <tr><th>하위</th><th>하는 일</th></tr>
-          </thead>
-          <tbody>
-            <tr><td>knock</td><td>피드·콘텐츠</td></tr>
-            <tr><td>질문하기</td><td>현직자 질문 / HR 패스 등과 연결</td></tr>
-            <tr><td>커피챗</td><td>현직자 커피챗 일정·신청</td></tr>
-            <tr><td>채용 게시판</td><td>채용공고</td></tr>
-            <tr><td>대외활동</td><td>대외활동 정보</td></tr>
-            <tr><td>BDAI Picks</td><td>제휴·추천 카드</td></tr>
-          </tbody>
-        </table>
-        <div class="ops-box">
-          <h4>어드민</h4>
-          <ul>
-            <li>왼쪽 탭 <strong>Knock</strong> (피드·HR패스·커피챗·채용·대외활동·Picks)</li>
-            <li>신규 운영진 필수 범위는 아님. 담당 배정 후 진입</li>
-          </ul>
+        <div class="media-row">
+          <figure class="shot">
+            <img src="./assets/img/learning.png" alt="Learning 공모전" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>Learning</strong> — 예: 공모전 목록</figcaption>
+          </figure>
+          <div class="aside">
+            <h4>운영진</h4>
+            <ul>
+              <li>어드민 <strong>Learning</strong></li>
+              <li>강의·WAVE 심사, VOD 입금은 <strong>일상 운영</strong> 대기열</li>
+              <li>담당 없는 승인은 임의 처리하지 않음</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <!-- 7 Report -->
-      <section id="tab-report" data-search="report genz trendz 리포트">
-        <h2>7. Report</h2>
+      <section id="tab-knock" data-search="knock 커피챗 채용">
+        <h2>7. knock</h2>
         <div class="section-meta">
-          <span>사이트 탭</span>
-          <span>Gen Z · Trend Z</span>
+          <span>드롭다운</span>
+          <span>knock · 질문하기 · 커피챗 · 채용 · 대외활동 · Picks</span>
         </div>
         <div class="purpose">
           <span class="label">탭 목적</span>
-          <p>리포트 콘텐츠를 모아 보는 메뉴입니다. 공지 카테고리·Report 허브와 연결됩니다.</p>
+          <p>커리어·네트워킹 허브입니다. 정규반 수업 운영과 축이 다릅니다.</p>
+        </div>
+
+        <div class="media-row">
+          <figure class="shot">
+            <img src="./assets/img/knock.png" alt="knock" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>knock</strong> — 피드·콘텐츠</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="./assets/img/coffee.png" alt="커피챗" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>커피챗</strong> — 일정·신청</figcaption>
+          </figure>
         </div>
         <div class="ops-box">
           <h4>어드민</h4>
           <ul>
-            <li>왼쪽 탭 <strong>Report</strong> 또는 공지 카테고리(Gen Z / Trend Z)</li>
+            <li>왼쪽 탭 <strong>Knock</strong></li>
+            <li>신규 필수 범위는 아님. 담당 배정 후 진입</li>
           </ul>
         </div>
       </section>
 
-      <!-- 8 Community -->
+      <section id="tab-report" data-search="report 리포트">
+        <h2>8. Report</h2>
+        <div class="section-meta"><span>Gen Z · Trend Z 등</span></div>
+        <div class="purpose">
+          <span class="label">탭 목적</span>
+          <p>리포트 콘텐츠를 모아서 보는 메뉴입니다.</p>
+        </div>
+        <figure class="shot">
+          <img src="./assets/img/report.png" alt="Report" width="1280" height="800" loading="lazy" />
+          <figcaption><strong>Report</strong> — 리포트 목록/상세</figcaption>
+        </figure>
+        <div class="ops-box">
+          <h4>어드민</h4>
+          <ul><li>왼쪽 탭 <strong>Report</strong> 또는 공지 카테고리</li></ul>
+        </div>
+      </section>
+
       <section id="tab-community" data-search="커뮤니티 공지 행사 qna">
-        <h2>8. 커뮤니티</h2>
+        <h2>9. 커뮤니티</h2>
         <div class="section-meta">
-          <span>사이트 탭</span>
           <span>/qna/ · /notices/</span>
+          <span>공지 · QnA · 자유 · 후기</span>
         </div>
         <div class="purpose">
           <span class="label">탭 목적</span>
-          <p>
-            QnA 게시판과 공지·행사를 담는 탭입니다.
-            사이트에서는 커뮤니티로 묶여 있고, 운영은 공지 작성과 행사 신청 처리가 핵심입니다.
-          </p>
+          <p>공지·행사와 QnA/게시판입니다. 행사 신청·승인·안내가 운영 핵심입니다.</p>
         </div>
 
-        <figure class="shot">
-          <img src="./assets/img/06_community_qna.png" alt="커뮤니티 QnA 화면" width="390" height="844" loading="lazy" />
-          <figcaption>
-            <strong>커뮤니티 · QnA</strong> —
-            글 작성·댓글·필터. 공지/행사는 같은 탭 흐름에서 /notices/로 연결
-          </figcaption>
-        </figure>
+        <div class="media-row">
+          <figure class="shot">
+            <img src="./assets/img/community.png" alt="커뮤니티 QnA" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>커뮤니티 · QnA</strong> — 글 목록·필터·운영진 대댓글 확인</figcaption>
+          </figure>
+          <figure class="shot">
+            <img src="./assets/img/notices.png" alt="공지" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>공지</strong> — 공지/행사 목록 (신청 가능한 행사 포함)</figcaption>
+          </figure>
+        </div>
 
-        <h3>공지·행사 운영 흐름</h3>
+        <h3>행사 운영 흐름</h3>
         <div class="flow">
           <span>공지 작성</span><span class="arrow">→</span>
-          <span>신청 기간·정원·Zoom</span><span class="arrow">→</span>
+          <span>기간·정원·Zoom</span><span class="arrow">→</span>
           <span>신청 승인</span><span class="arrow">→</span>
           <span>안내 메일</span>
         </div>
-
-        <figure class="shot">
-          <img src="./assets/img/09_admin_events.png" alt="행사 신청 대시보드" width="1440" height="900" loading="lazy" />
-          <figcaption>
-            <strong>어드민 · 행사 신청 대시보드</strong> —
-            행사별 신청·승인·정원. 현황은 여기가 빠름
-          </figcaption>
-        </figure>
-
         <div class="ops-box">
           <h4>어드민</h4>
           <ul>
-            <li>왼쪽 탭 <strong>커뮤니티</strong> — 공지, 행사 신청</li>
-            <li>현황 — <strong>대시보드·지표 → 행사 신청</strong></li>
+            <li>왼쪽 탭 <strong>커뮤니티</strong></li>
+            <li>현황: <strong>대시보드·지표 → 행사 신청</strong></li>
           </ul>
         </div>
       </section>
 
-      <!-- 9 Me -->
-      <section id="tab-me" data-search="마이페이지 계정 스탬프 프로필">
-        <h2>9. 마이페이지</h2>
-        <div class="section-meta">
-          <span>사이트 탭</span>
-          <span>/accounts/me/</span>
-        </div>
+      <section id="tab-me" data-search="마이페이지">
+        <h2>10. 마이페이지</h2>
+        <div class="section-meta"><span>/accounts/me/</span></div>
         <div class="purpose">
           <span class="label">탭 목적</span>
-          <p>계정·프로필, 즐겨찾기, 분반별 블로그 스탬프 등을 확인하는 개인 공간입니다.</p>
+          <p>계정·알림·스탬프 등 개인 공간입니다. 운영진이 매일 직접 만지는 탭은 아닙니다.</p>
         </div>
-
-        <figure class="shot">
-          <img src="./assets/img/07_mypage.png" alt="마이페이지 화면" width="390" height="844" loading="lazy" />
-          <figcaption>
-            <strong>마이페이지</strong> —
-            프로필·스탬프·알림 등. 운영진이 직접 매일 만지는 탭은 아님
-          </figcaption>
-        </figure>
-
-        <div class="ops-box">
-          <h4>운영과 연결되는 부분</h4>
-          <ul>
-            <li>블로그 스탬프 — 정규반 탭에서 제출 승인 시 반영</li>
-            <li>회원 정보·유형 — 어드민 회원·권한에서 관리</li>
-          </ul>
+        <div class="media-row">
+          <figure class="shot">
+            <img src="./assets/img/mypage.png" alt="마이페이지" width="1280" height="800" loading="lazy" />
+            <figcaption><strong>마이페이지</strong></figcaption>
+          </figure>
+          <div class="aside">
+            <h4>운영과 연결</h4>
+            <ul>
+              <li>블로그 스탬프 → 정규반에서 제출 승인 시 반영</li>
+              <li>회원 유형/상태 → 회원·권한에서 관리</li>
+              <li>알림 건수 → 사이트 활동·운영 처리 결과</li>
+            </ul>
+          </div>
         </div>
       </section>
 
-      <!-- 10 Admin -->
-      <section id="admin" data-search="운영 어드민 탭 일상운영 대시보드">
-        <h2>10. 운영 어드민 (관리 콘솔)</h2>
+      <section id="admin" data-search="운영 어드민 일상운영 대시보드">
+        <h2>11. 운영 어드민</h2>
         <div class="section-meta">
           <span>/admin/</span>
-          <span>공용 계정 + Slack 인증</span>
+          <span>공용 계정 + Slack</span>
         </div>
         <div class="purpose">
           <span class="label">역할</span>
-          <p>
-            사이트 탭에 보이는 상태를 만들고 고치는 관리 화면입니다.
-            왼쪽 허브 탭이 업무 구역입니다.
-          </p>
+          <p>사이트 탭에 보이는 상태를 관리하는 콘솔입니다. 왼쪽 허브가 업무 구역입니다.</p>
         </div>
 
-        <figure class="shot">
-          <img src="./assets/img/08_admin_hub.png" alt="운영 어드민 대시보드 허브" width="1440" height="900" loading="lazy" />
-          <figcaption>
-            <strong>어드민 · 대시보드 허브</strong> —
-            운영 현황, 정규반, 행사 신청, 강사 관리 등 지표 진입점
-          </figcaption>
-        </figure>
+        <div class="media-row">
+          <figure class="shot shot--panel">
+            <img src="./assets/img/admin_home.png" alt="어드민 대시보드 홈" width="1360" height="900" loading="lazy" />
+            <figcaption><strong>대시보드 홈</strong> — 정규반 운영·행사 신청·강사 관리 등 바로가기</figcaption>
+          </figure>
+          <figure class="shot shot--sidebar">
+            <img src="./assets/img/admin_sidebar.png" alt="어드민 왼쪽 탭" width="360" height="820" loading="lazy" />
+            <figcaption><strong>왼쪽 탭</strong> — 일상 운영 · 회원 · 정규반 · 커뮤니티 등</figcaption>
+          </figure>
+        </div>
 
-        <h3>사이트 탭 ↔ 어드민 매핑</h3>
+        <h3>사이트 탭 ↔ 어드민</h3>
         <table>
-          <thead>
-            <tr><th>사이트 탭</th><th>주로 쓰는 어드민</th></tr>
-          </thead>
+          <thead><tr><th>사이트</th><th>어드민</th></tr></thead>
           <tbody>
-            <tr><td>정규반</td><td>정규반 · 일상 운영 (CSV) · 대시보드</td></tr>
+            <tr><td>정규반</td><td>정규반 · 일상 운영(CSV) · 대시보드(정규반 운영)</td></tr>
             <tr><td>커뮤니티</td><td>커뮤니티 · 행사 신청 대시보드</td></tr>
-            <tr><td>Learning</td><td>Learning · 일상 운영 (심사·입금)</td></tr>
+            <tr><td>Learning</td><td>Learning · 일상 운영(심사·입금)</td></tr>
             <tr><td>knock</td><td>Knock</td></tr>
             <tr><td>B.D.A.I</td><td>AI 기업분석 · AI 캠퍼스맵</td></tr>
-            <tr><td>Report</td><td>Report / 공지 카테고리</td></tr>
-            <tr><td>(모집 시즌)</td><td>BDAI 학회원 모집 · BDAI Form</td></tr>
+            <tr><td>Report</td><td>Report</td></tr>
+            <tr><td>모집 시즌</td><td>BDAI 학회원 모집 · BDAI Form</td></tr>
           </tbody>
         </table>
 
-        <h3>일상 운영 탭에서 자주 쓰는 것</h3>
+        <h3>일상 운영에서 자주 쓰는 것</h3>
         <ul class="compact-list">
           <li>출석 CSV · 상벌점 CSV · 정규반(수강) CSV</li>
           <li>B포인트 지급</li>
-          <li>강의·WAVE 심사, VOD 입금, 첨삭 승인 대기열</li>
+          <li>강의/WAVE 심사, VOD 입금, 첨삭 승인 대기열</li>
         </ul>
       </section>
 
-      <!-- 11 Weekly -->
-      <section id="weekly" data-search="주간 운영 수업 출석 사유폼">
-        <h2>11. 주간 운영 (정규반 기준)</h2>
-        <p class="lead">사이트 「정규반」과 어드민 「정규반·일상 운영·대시보드」를 같이 쓰는 루틴입니다.</p>
+      <section id="weekly" data-search="주간 운영">
+        <h2>12. 주간 운영 (정규반)</h2>
         <table class="when-table">
-          <thead>
-            <tr><th>때</th><th>할 일</th><th>사이트 / 어드민</th></tr>
-          </thead>
+          <thead><tr><th>때</th><th>할 일</th><th>어디</th></tr></thead>
           <tbody>
-            <tr>
-              <td>수업 전</td>
-              <td>Zoom·자료·과제 노출 확인</td>
-              <td>사이트 정규반 · 어드민 분반</td>
-            </tr>
-            <tr>
-              <td>수업 직후</td>
-              <td>출석 반영</td>
-              <td>어드민 일상 운영 / 정규반</td>
-            </tr>
-            <tr>
-              <td>당일~익일</td>
-              <td>출결 사유폼 검토</td>
-              <td>어드민 정규반</td>
-            </tr>
-            <tr>
-              <td>주중</td>
-              <td>상벌점·미제출 안내</td>
-              <td>일상 운영 · 정규반</td>
-            </tr>
-            <tr>
-              <td>주 1회</td>
-              <td>출석·제출률 이상 분반 확인</td>
-              <td>대시보드 → 정규반 운영</td>
-            </tr>
+            <tr><td>수업 전</td><td>Zoom·자료·과제 노출 확인</td><td>사이트 정규반 · 어드민 분반</td></tr>
+            <tr><td>수업 직후</td><td>출석 반영</td><td>어드민 일상 운영 / 정규반</td></tr>
+            <tr><td>당일~익일</td><td>출결 사유폼 검토</td><td>어드민 정규반</td></tr>
+            <tr><td>주중</td><td>상벌점·미제출 안내</td><td>일상 운영 · 정규반</td></tr>
+            <tr><td>주 1회</td><td>출석·제출률 이상 분반 확인</td><td>대시보드 → 정규반 운영</td></tr>
           </tbody>
         </table>
       </section>
 
-      <!-- 12 Help -->
-      <section id="help" data-search="문의 daybear">
-        <h2>12. 문의</h2>
+      <section id="help" data-search="문의">
+        <h2>13. 문의</h2>
         <ol class="steps">
-          <li>사이트 탭으로 “회원에게 보이는 화면” 확인</li>
-          <li>위 매핑표로 어드민 구역 찾기</li>
+          <li>사이트 탭에서 회원 화면 확인</li>
+          <li>위 매핑으로 어드민 구역 찾기</li>
           <li>Daybear 키워드 검색</li>
-          <li>담당자에게: 목적 + URL + 한 일 + 오류/결과 문구</li>
+          <li>담당자: 목적 + URL + 한 일 + 오류/결과</li>
         </ol>
       </section>
 
-      <p class="footer">
-        BDAI LMS 운영진 소개 메뉴얼 · v0.5 · bdai.co.kr 상단 탭 + 화면 이미지 · 고도화 중
-      </p>
+      <p class="footer">BDAI LMS 운영진 소개 메뉴얼 · v0.6 · 실제 화면 캡처 · 이미지 크기 제한 적용</p>
     </main>
   </div>
-
   <script src="./assets/app.js"></script>
 </body>
 </html>
