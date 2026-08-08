@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BDAI LMS 운영진 빠른 시작 메뉴얼</title>
+  <meta name="description" content="처음 어드민을 쓰는 운영진을 위한 BDAI LMS 핵심 메뉴얼" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
+  <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./assets/style.css" />
+</head>
+<body>
+  <a class="skip" href="#main">본문으로 건너뛰기</a>
+
+  <div class="shell">
+    <aside class="nav" aria-label="목차">
+      <a class="brand" href="#top">BDAI Ops Manual</a>
+      <p class="brand-sub">운영진 빠른 시작 · v0.1</p>
+      <input id="manual-search" class="nav-search" type="search" placeholder="검색 (출결, 행사…)" aria-label="메뉴얼 검색" />
+      <ol>
+        <li><a href="#start">1. 시작하기</a></li>
+        <li><a href="#map">2. 메뉴 지도</a></li>
+        <li><a href="#weekly">3. 주간 루틴</a></li>
+        <li><a href="#members">4. 회원·수강</a></li>
+        <li><a href="#attendance">5. 출결·상벌점</a></li>
+        <li><a href="#events">6. 공지·행사</a></li>
+        <li><a href="#queues">7. 일상 운영 큐</a></li>
+        <li><a href="#season">8. 시즌 업무</a></li>
+        <li><a href="#cheatsheet">9. URL 치트시트</a></li>
+        <li><a href="#help">10. 막힐 때</a></li>
+      </ol>
+    </aside>
+
+    <main id="main" class="main">
+      <header class="hero" id="top">
+        <div class="kicker">For new operators</div>
+        <h1>처음 쓰는 사람을 위한<br />LMS 운영 핵심만</h1>
+        <p>
+          메뉴가 많아서 전부 외울 필요는 없습니다.
+          아래 <strong>10개 섹션</strong>만 익히면 일상 운영의 80%를 처리할 수 있습니다.
+          세부 기능은 어드민 안의 <strong>Daybear 헬프</strong>에서 “어떻게 해요?”로 검색하세요.
+        </p>
+        <div class="meta-row">
+          <span class="pill">대상: 신규 운영진</span>
+          <span class="pill">범위: 핵심만 (고도화 예정)</span>
+          <span class="pill">어드민 진입: <code>/admin/</code></span>
+        </div>
+      </header>
+
+      <section id="start" data-search="로그인 시작 daybear 슬랙 2fa 스태프 권한 개인계정">
+        <h2>1. 시작하기 (5분)</h2>
+        <p class="lead">접속 → 권한 확인 → 홈 위치만 잡으면 됩니다.</p>
+        <ol class="steps">
+          <li>본인 계정으로 LMS 로그인 후 <code>/admin/</code> 또는 <code>/admin/dashboard/</code>로 이동합니다.</li>
+          <li>어드민이 안 열리면 <code>is_staff</code> 권한이 없는 것입니다. 시니어 운영진/슈퍼유저에게 스태프 권한 부여를 요청하세요.</li>
+          <li>공용 계정 대신 <strong>개인 계정</strong> 사용을 권장합니다. (누가 무엇을 바꿨는지 추적 가능)</li>
+          <li>공용 계정을 쓰는 경우 Slack 6자리 2차 인증이 뜰 수 있습니다. 지정된 슬랙 채널의 번호를 확인하세요.</li>
+          <li>화면 어딘가의 <strong>Daybear</strong>(도움말)에서 “출석”, “행사”, “상벌점”처럼 검색해 보세요. 이게 공식 플레이북입니다.</li>
+        </ol>
+        <div class="callout tip">
+          <strong>첫날 목표:</strong> 운영 홈(<code>/admin/dashboard/</code>)을 열고, 왼쪽 허브 이름만 훑어본 뒤 Daybear로 “출석 CSV”를 한 번 검색해 보기.
+        </div>
+      </section>
+
+      <section id="map" data-search="메뉴 지도 허브 일상운영 정규반 커뮤니티 knock 모집">
+        <h2>2. 메뉴 지도 (어디 가면 되나)</h2>
+        <p class="lead">왼쪽은 허브입니다. 자주 쓰는 것만 기억하세요.</p>
+        <div class="grid-2">
+          <article class="card">
+            <strong>운영 홈 / 대시보드·지표</strong>
+            <p>전체 현황을 보는 출발점. 막히면 여기로 돌아오세요.</p>
+            <span class="path">/admin/dashboard/</span>
+          </article>
+          <article class="card">
+            <strong>일상 운영</strong>
+            <p>매일 쓰는 도구: 출석·상벌점 CSV, B포인트, 심사/승인 대기열.</p>
+          </article>
+          <article class="card">
+            <strong>정규반</strong>
+            <p>분반, 수강, 출결, 과제, 조별활동, 블로그 챌린지.</p>
+          </article>
+          <article class="card">
+            <strong>커뮤니티</strong>
+            <p>공지 작성, 행사 신청 승인, 행사 대시보드.</p>
+          </article>
+          <article class="card">
+            <strong>회원·권한</strong>
+            <p>회원 승인, 유형 변경, 스태프/강사 관련.</p>
+          </article>
+          <article class="card">
+            <strong>BDAI 학회원 모집</strong>
+            <p>모집 시즌에만. 서베이·입금·분반찾기.</p>
+          </article>
+        </div>
+        <div class="callout note">
+          Knock / 광고 / 캠퍼스맵 / 기업분석 / HR / 비용 등은 <strong>담당 팀이 있을 때</strong> 들어가면 됩니다. 신규 운영진 필수 범위는 아닙니다.
+        </div>
+      </section>
+
+      <section id="weekly" data-search="주간 루틴 체크리스트 수업 출결 과제 대시보드">
+        <h2>3. 주간 루틴 (정규반 운영의 뼈대)</h2>
+        <p class="lead">수업이 있는 주에는 이 순서만 지키면 크게 흔들리지 않습니다.</p>
+        <ul class="checklist">
+          <li><input type="checkbox" /> 수업 전: 분반 Zoom/자료/과제 공지 상태 확인</li>
+          <li><input type="checkbox" /> 수업 후: 출석 반영 (Zoom 또는 CSV)</li>
+          <li><input type="checkbox" /> 출결 사유폼 검토 (결석/지각 사유)</li>
+          <li><input type="checkbox" /> 필요 시 상벌점 반영</li>
+          <li><input type="checkbox" /> 과제 제출률 점검 → 미제출 독려</li>
+          <li><input type="checkbox" /> <code>/admin/regulars/dashboard/</code>에서 분반 현황 한 번 훑기</li>
+        </ul>
+        <div class="callout tip">
+          세부 화면 경로는 아래 5·9번을 보세요. “매주 무엇을 할지”만 먼저 몸에 익히면 됩니다.
+        </div>
+      </section>
+
+      <section id="members" data-search="회원 승인 수강 enrollment csv 분반 배정 기수">
+        <h2>4. 회원 승인 · 수강 배정</h2>
+        <p class="lead">사람이 LMS에 들어오고, 분반에 들어가게 만드는 일.</p>
+
+        <h3>회원 승인</h3>
+        <ol class="steps">
+          <li><code>/admin/accounts/user/</code>에서 승인 대기 회원을 찾습니다.</li>
+          <li>회원 상태(승인)와 회원 유형(정규반/일반 등)을 맞춥니다.</li>
+          <li>운영진이 될 사람에게만 스태프 권한을 부여합니다. 남발하지 마세요.</li>
+        </ol>
+
+        <h3>수강(Enrollment) CSV</h3>
+        <ol class="steps">
+          <li>「일상 운영」또는 「정규반」→ <strong>정규반 CSV 업로드</strong>.</li>
+          <li>기수/분반/회원 식별값이 어드민 설정과 같은지 확인 후 업로드.</li>
+          <li>업로드 결과 메시지를 읽고, 분반·수강 목록에서 인원 수를 검수합니다.</li>
+        </ol>
+        <div class="callout warn">
+          대량 업로드 전에는 <strong>소수 행으로 테스트</strong>하세요. 중복 시 스킵/갱신 규칙이 달라질 수 있습니다.
+        </div>
+      </section>
+
+      <section id="attendance" data-search="출석 출결 csv zoom 상벌점 벌점 포인트 b포인트 사유폼">
+        <h2>5. 출결 · 상벌점 · B포인트</h2>
+        <p class="lead">가장 자주 만지는 영역입니다.</p>
+
+        <h3>출석 반영</h3>
+        <ol class="steps">
+          <li>일괄: 「일상 운영」→ <strong>출석 CSV 업로드</strong> (<code>/admin/regulars/attendancerecord/import-csv/</code>)</li>
+          <li>분반별 Zoom: 분반 상세의 Zoom 출석 가져오기</li>
+          <li>반영 후 「출석 기록」에서 분반·날짜 건수를 검수</li>
+          <li>사유폼 제출은 「출결 사유」메뉴에서 검토</li>
+        </ol>
+        <div class="callout note">
+          FORM/MANUAL로 넣은 출석은 Zoom 재업로드에 덮어쓰지 않도록 보호되는 경우가 많습니다.
+          숫자가 이상하면 “어떤 경로로 넣었는지”부터 확인하세요. 벌점 자동정리는 보통 주기적으로 돕니다.
+        </div>
+
+        <h3>상벌점</h3>
+        <ol class="steps">
+          <li>「일상 운영」→ <strong>상벌점 CSV 업로드</strong></li>
+          <li>회원 식별키(이메일 등)가 계정과 일치하는지 확인</li>
+          <li>「상벌점 기록」에서 결과 검수 · 이상치만 개별 수정</li>
+        </ol>
+
+        <h3>B포인트</h3>
+        <ol class="steps">
+          <li>「일상 운영」→ <strong>B 포인트 지급</strong></li>
+          <li>단건 지급 또는 샘플 CSV로 일괄 지급</li>
+          <li>사유는 문의 대응용으로 구체적으로 남기기</li>
+        </ol>
+      </section>
+
+      <section id="events" data-search="공지 행사 이벤트 신청 승인 대기 줌 메일">
+        <h2>6. 공지 · 행사 신청</h2>
+        <p class="lead">공지 올리고 → 신청 받고 → 승인/안내하는 흐름.</p>
+        <ol class="steps">
+          <li>「커뮤니티」→ 공지에서 글을 작성합니다. 행사이면 신청 기간·정원·Zoom 등을 설정합니다.</li>
+          <li>신청 건은 행사 신청 목록에서 승인 / 대기 / 취소를 처리합니다.</li>
+          <li>현황은 <code>/admin/notices/event-applications/dashboard/</code>에서 모아서 봅니다.</li>
+          <li>필요 시 Zoom 안내 메일·채팅 초대 메일 등 일괄 발송 기능을 사용합니다.</li>
+        </ol>
+        <div class="callout tip">
+          “몇 명 신청했지?”는 개별 목록보다 <strong>행사 신청 대시보드</strong>가 빠릅니다.
+        </div>
+      </section>
+
+      <section id="queues" data-search="일상 운영 큐 심사 입금 첨삭 강의 wave vod">
+        <h2>7. 「일상 운영」대기열</h2>
+        <p class="lead">매일 한 번씩 열어볼 승인 큐입니다. 담당이 정해져 있으면 그 사람 기준으로 처리하세요.</p>
+        <table>
+          <thead>
+            <tr><th>큐</th><th>하는 일</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>강의·클래스 심사</td>
+              <td>등록된 강의/클래스 콘텐츠 승인·반려</td>
+            </tr>
+            <tr>
+              <td>WAVE·원데이·JOB 심사</td>
+              <td>단편 콘텐츠 심사</td>
+            </tr>
+            <tr>
+              <td>강의 VOD 입금 승인</td>
+              <td>유료 강의 입금 확인 후 접근 허용</td>
+            </tr>
+            <tr>
+              <td>자소서·포트폴리오 첨삭</td>
+              <td>정규반 첨삭 요청 승인/반려</td>
+            </tr>
+            <tr>
+              <td>후기 쿠폰 입금 등</td>
+              <td>프로모션성 입금/요청 처리 (메뉴에 보이면)</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="callout warn">
+          확실하지 않은 승인/반려를 임의로 처리하지 마세요. 담당 팀 채널에 먼저 확인하는 게 안전합니다.
+        </div>
+      </section>
+
+      <section id="season" data-search="시즌 조별활동 블로그 챌린지 스탬프 모집 입금 분반찾기">
+        <h2>8. 시즌 업무 (필요할 때만)</h2>
+        <p class="lead">평소엔 닫아두고, 시즌이 열리면 깊게 들어가면 됩니다.</p>
+        <div class="grid-2">
+          <article class="card">
+            <strong>조별활동</strong>
+            <p>활동 생성 → 정보 제출 → 팀 매칭 → 일지/채점 → 중도이탈 모니터링.</p>
+            <span class="path">정규반 → 조별활동</span>
+          </article>
+          <article class="card">
+            <strong>블로그 챌린지</strong>
+            <p>주차별 주제 등록 → 제출 확인 → 스탬프(승인) 지급.</p>
+            <span class="path">정규반 → 블로그 챌린지</span>
+          </article>
+          <article class="card">
+            <strong>학회원 모집</strong>
+            <p>모집 페이지/서베이 → 신청서 → 입금 CSV → 미매칭 큐 → 분반찾기.</p>
+            <span class="path">BDAI 학회원 모집 허브</span>
+          </article>
+          <article class="card">
+            <strong>BDAI Form</strong>
+            <p>구글폼 대신 쓰는 내부 폼. 공개 링크 복사 → 응답 승인 → 대시보드.</p>
+            <span class="path">/admin/bdai_forms/</span>
+          </article>
+        </div>
+        <div class="callout note">
+          조별활동·블로그는 이미 상세 내부 문서가 있습니다. 이 메뉴얼은 “존재와 진입점”만 잡고, 시즌 오픈 시 상세 런북을 링크해 고도화할 예정입니다.
+        </div>
+      </section>
+
+      <section id="cheatsheet" data-search="url 치트시트 경로 링크 바로가기">
+        <h2>9. URL 치트시트</h2>
+        <p class="lead">북마크해두면 메뉴 헤매는 시간이 줄어듭니다. 도메인 앞에 실제 LMS 주소를 붙이세요.</p>
+        <table>
+          <thead>
+            <tr><th>용도</th><th>경로</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>운영 홈</td><td><code>/admin/dashboard/</code></td></tr>
+            <tr><td>회원</td><td><code>/admin/accounts/user/</code></td></tr>
+            <tr><td>출석 CSV</td><td><code>/admin/regulars/attendancerecord/import-csv/</code></td></tr>
+            <tr><td>상벌점 CSV</td><td><code>/admin/regulars/pointrecord/import-csv/</code></td></tr>
+            <tr><td>수강 CSV</td><td><code>/admin/regulars/enrollment/import-csv/</code></td></tr>
+            <tr><td>정규반 대시보드</td><td><code>/admin/regulars/dashboard/</code></td></tr>
+            <tr><td>기수 라인업</td><td><code>/admin/regulars/cohort-plan/</code></td></tr>
+            <tr><td>행사 신청 대시보드</td><td><code>/admin/notices/event-applications/dashboard/</code></td></tr>
+            <tr><td>B포인트</td><td><code>/admin/b-point/</code></td></tr>
+            <tr><td>BDAI Form</td><td><code>/admin/bdai_forms/</code></td></tr>
+            <tr><td>강사 대시보드</td><td><code>/admin/instructors/dashboard/</code></td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="help" data-search="도움 막힐때 daybear 에스컬레이션 faq">
+        <h2>10. 막힐 때</h2>
+        <p class="lead">혼자 메뉴를 전부 뒤지지 마세요.</p>
+        <ol class="steps">
+          <li>어드민 <strong>Daybear</strong>에서 키워드로 검색 (출석, 상벌점, 모집, 첨삭…)</li>
+          <li>이 메뉴얼 상단 검색창으로 관련 섹션을 찾기</li>
+          <li>그래도 불확실하면 담당 시니어에게 <em>화면 URL + 하려는 일 + 에러/결과 메시지</em>를 붙여 질문</li>
+        </ol>
+        <div class="callout tip">
+          <strong>좋은 질문 예시:</strong>
+          “출석 CSV 올렸는데 12건 중 2건 실패. URL은 …/import-csv/ 이고 메시지는 ‘회원 없음’입니다. 이메일 매칭 기준이 뭔가요?”
+        </div>
+        <h3>아직 이 메뉴얼에 없는 것</h3>
+        <p style="margin:0;color:var(--muted);">
+          광고·BDAIB, Knock 세부 운영, 캠퍼스맵, 기업분석, HR/비용, NEWTEAMZ/MOU, 배포/서버.
+          필요해지면 역할별 부록으로 추가할 예정입니다.
+        </p>
+      </section>
+
+      <p class="footer">
+        BDAI LMS Ops Manual · v0.1 · 핵심만 우선 정리 · 고도화용 베이스 문서
+      </p>
+    </main>
+  </div>
+
+  <script src="./assets/app.js"></script>
+</body>
+</html>
