@@ -335,6 +335,46 @@ h3:first-of-type { margin-top: 0; }
   .dual { grid-template-columns: 1fr; }
 }
 
+.tab-name {
+  display: inline-block;
+  font-weight: 800;
+  font-size: 0.82rem;
+  color: var(--accent);
+  background: var(--accent-soft);
+  border-radius: 8px;
+  padding: 2px 8px;
+  margin-right: 6px;
+}
+
+.when-table td:first-child {
+  white-space: nowrap;
+  font-weight: 700;
+  color: var(--ink);
+  width: 7.5rem;
+}
+
+.compact-list {
+  margin: 0;
+  padding-left: 1.15rem;
+  color: var(--ink-soft);
+}
+.compact-list li { margin-bottom: 4px; }
+
+.section-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0 0 14px;
+}
+.section-meta span {
+  font-size: 0.78rem;
+  color: var(--muted);
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  padding: 4px 10px;
+  background: #fff;
+}
+
 table {
   width: 100%;
   border-collapse: collapse;
