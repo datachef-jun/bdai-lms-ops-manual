@@ -18,7 +18,7 @@
   <div class="shell">
     <aside class="nav" aria-label="목차">
       <a class="brand" href="#top">BDAI Ops Manual</a>
-      <p class="brand-sub">운영진 소개 · v0.6</p>
+      <p class="brand-sub">운영진 소개 · v0.7</p>
       <input id="manual-search" class="nav-search" type="search" placeholder="검색 (정규반, 출석…)" aria-label="메뉴얼 검색" />
       <ol>
         <li><a href="#intro">1. 시작</a></li>
@@ -39,16 +39,16 @@
 
     <main id="main" class="main">
       <header class="hero" id="top">
-        <div class="kicker">bdai.co.kr · v0.6</div>
-        <h1>사이트 화면으로 보는<br />운영진 메뉴얼</h1>
+        <div class="kicker">bdai.co.kr · v0.7</div>
+        <h1>사이트 탭 + 어드민<br />사용법 메뉴얼</h1>
         <p>
-          학회원·현직자가 쓰는 <strong>bdai.co.kr 상단 탭</strong>을 기준으로,
-          각 화면이 무엇을 보여 주는지와 운영진이 어드민에서 무엇을 관리하는지를 정리합니다.
+          학회원 화면(bdai.co.kr 상단 탭)을 기준으로,
+          각 탭마다 <strong>어드민에서 어디를 열고 무엇을 하면 되는지</strong>를 상세히 정리합니다.
         </p>
         <div class="meta-row">
           <span class="pill">대상: 신규 운영진</span>
-          <span class="pill">화면: 실제 LMS 캡처</span>
-          <span class="pill">어드민: 공용 계정</span>
+          <span class="pill">화면 캡처 + 어드민 절차</span>
+          <span class="pill">공용 계정</span>
         </div>
       </header>
 
@@ -129,6 +129,30 @@
             </ul>
           </div>
         </div>
+
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>대시보드에 분반·배너·알림이 맞게 보이게 하려면</h3>
+          <p class="where">대시보드 자체는 별도 “편집 화면”이 아니라, 아래 데이터가 모여 보이는 요약입니다.</p>
+          <h4>1) 「나의 정규반」이 비어 있을 때</h4>
+          <ol class="steps">
+            <li>어드민 왼쪽 <strong>회원·권한</strong> → 회원 목록에서 해당 계정 <strong>승인 상태</strong> 확인</li>
+            <li>왼쪽 <strong>일상 운영</strong> 또는 <strong>정규반</strong> → <strong>정규반 CSV 업로드</strong>로 수강(Enrollment) 배정</li>
+            <li>배정 후 사이트 대시보드를 새로고침해 분반 카드가 뜨는지 확인</li>
+          </ol>
+          <span class="path-line">/admin/accounts/user/ · /admin/regulars/enrollment/import-csv/</span>
+          <h4>2) 상단·대시보드 배너</h4>
+          <ol class="steps">
+            <li>왼쪽 <strong>광고·제휴</strong> 또는 <strong>대시보드·지표 → 광고 배너 및 예산 대시보드</strong></li>
+            <li>지면(대시보드 등)·노출 기간·이미지를 확인·수정</li>
+            <li>실험 중이면 <strong>BDAI × BDAIB</strong>에서 A/B가 대신 노출될 수 있음</li>
+          </ol>
+          <h4>3) 알림·B포인트</h4>
+          <ul class="compact-list">
+            <li>B포인트 지급: <strong>일상 운영 → B 포인트 지급</strong></li>
+            <li>HR 패스 등: <strong>Knock</strong> 관련 메뉴 (담당 확인)</li>
+          </ul>
+        </div>
       </section>
 
       <section id="tab-bdai" data-search="기업분석 캠퍼스맵 bdai">
@@ -153,12 +177,29 @@
           </figure>
         </div>
 
-        <div class="ops-box">
-          <h4>어드민</h4>
-          <ul>
-            <li>왼쪽 탭 <strong>AI 기업분석</strong> / <strong>AI 캠퍼스맵</strong></li>
-            <li>대시보드·지표에도 캠퍼스맵·커피챗 신청 바로가기 있음</li>
-          </ul>
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>B.D.A.I 탭 운영 방법</h3>
+          <p class="where">왼쪽 탭 <strong>AI 기업분석</strong> · <strong>AI 캠퍼스맵</strong> · (현황) <strong>대시보드·지표</strong></p>
+
+          <h4>AI 기업분석</h4>
+          <ol class="steps">
+            <li>왼쪽 <strong>AI 기업분석</strong> 허브를 연다</li>
+            <li>기업·리포트 데이터 추가/수정은 해당 모델 목록에서 처리</li>
+            <li>회원이 넣은 <strong>커피챗 관심 신청</strong>은
+              <strong>대시보드·지표 → AI 기업분석 · 커피챗 신청</strong> (또는 같은 허브 내 신청 목록)에서 pending 확인</li>
+            <li>매칭·상태 변경 후 필요 시 메일/문자 안내</li>
+          </ol>
+          <div class="callout note" style="margin-top:10px">
+            knock의 「커피챗」공개 일정과, 기업분석 「관심 신청」DB는 별개일 수 있습니다. 문의가 오면 어느 경로인지 먼저 확인하세요.
+          </div>
+
+          <h4>AI 캠퍼스맵</h4>
+          <ol class="steps">
+            <li>왼쪽 <strong>AI 캠퍼스맵</strong> 또는 <strong>대시보드·지표 → AI 캠퍼스맵 운영</strong></li>
+            <li>학교별 장소·이미지·제휴 매장 등록/수정</li>
+            <li>학회원 리뷰·추가 요청이 있으면 같은 허브에서 검수</li>
+          </ol>
         </div>
       </section>
 
@@ -215,50 +256,82 @@
           </div>
         </div>
 
-        <h3>5-3. 운영진이 어드민에서 하는 일</h3>
-        <table>
-          <thead><tr><th>업무</th><th>어드민</th><th>사이트에 반영되는 것</th></tr></thead>
-          <tbody>
-            <tr>
-              <td>회원 승인·유형</td>
-              <td>회원·권한</td>
-              <td>로그인·이용 가능 여부</td>
-            </tr>
-            <tr>
-              <td>수강 배정</td>
-              <td>일상 운영 / 정규반 → 정규반 CSV</td>
-              <td>대시보드 「나의 정규반」, 분반 상세 접근</td>
-            </tr>
-            <tr>
-              <td>출석 반영</td>
-              <td>일상 운영 → 출석 CSV / 분반 Zoom</td>
-              <td>이번 주 출석, 출결 상세</td>
-            </tr>
-            <tr>
-              <td>출결 사유폼 검토</td>
-              <td>정규반 → 출결 사유</td>
-              <td>출석 상태·벌점 정리(시간차 가능)</td>
-            </tr>
-            <tr>
-              <td>상벌점</td>
-              <td>일상 운영 → 상벌점 CSV</td>
-              <td>총점·수료 기준</td>
-            </tr>
-            <tr>
-              <td>과제·자료·Zoom</td>
-              <td>정규반 → 분반/과제</td>
-              <td>수업 탭·이번 주 할 일</td>
-            </tr>
-            <tr>
-              <td>조별활동·블로그</td>
-              <td>정규반 (시즌)</td>
-              <td>팀·스탬프·관련 점수</td>
-            </tr>
-          </tbody>
-        </table>
-        <div class="callout tip">
-          <strong>출석 / 상벌점 / B포인트</strong><br />
-          출석 = 참여 기록 · 상벌점 = 수료용 총점 · B포인트 = 별도 보상(일상 운영에서 지급)
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>정규반 탭 — 상세 운영 절차</h3>
+          <p class="where">
+            주로 쓰는 왼쪽 탭: <strong>정규반</strong> · <strong>일상 운영</strong> · <strong>회원·권한</strong> · <strong>대시보드·지표</strong>
+          </p>
+
+          <h4>A. 회원 승인 (분반 배정 전)</h4>
+          <ol class="steps">
+            <li>왼쪽 <strong>회원·권한</strong> → 회원 목록</li>
+            <li>승인 대기 회원을 찾아 상태 <strong>승인</strong>, 유형(정규반 등) 맞춤</li>
+            <li>개인 학회원 계정에 스태프 권한은 주지 않음 (어드민은 공용 계정 사용)</li>
+          </ol>
+          <span class="path-line">/admin/accounts/user/</span>
+
+          <h4>B. 수강 배정 (Enrollment) — 「나의 정규반」에 카드가 뜨게</h4>
+          <ol class="steps">
+            <li>왼쪽 <strong>일상 운영</strong> 또는 <strong>정규반</strong> → <strong>정규반 CSV 업로드</strong></li>
+            <li>기수·분반·회원 식별값(이메일 등)이 어드민 분반/계정과 일치하는지 확인</li>
+            <li>소수 행으로 테스트 업로드 → 결과 메시지 확인 → 본 업로드</li>
+            <li>수강·분반 목록에서 인원 수 검수</li>
+          </ol>
+          <span class="path-line">/admin/regulars/enrollment/import-csv/</span>
+
+          <h4>C. 분반 설정 (Zoom·자료·과제)</h4>
+          <ol class="steps">
+            <li>왼쪽 <strong>정규반</strong> → 분반(ClassGroup) 목록에서 해당 분반 열기</li>
+            <li>Zoom 링크, 수업 자료, 주차별 과제 등록·수정</li>
+            <li>사이트 분반 상세 → 수업 탭에서 노출 확인</li>
+          </ol>
+          <span class="path-line">/admin/regulars/classgroup/</span>
+
+          <h4>D. 출석 반영 (수업 직후)</h4>
+          <ol class="steps">
+            <li><strong>일괄:</strong> 일상 운영 → <strong>출석 CSV 업로드</strong> — 컬럼 안내 확인 후 업로드</li>
+            <li><strong>분반별:</strong> 분반 상세의 Zoom 출석 가져오기</li>
+            <li>「출석 기록」에서 분반·날짜 건수 검수</li>
+            <li>사이트 분반 상세의 「이번 주 출석」·출결 상세가 바뀌었는지 확인</li>
+          </ol>
+          <span class="path-line">/admin/regulars/attendancerecord/import-csv/</span>
+          <div class="callout warn" style="margin-top:10px">
+            사유폼·수기로 확정된 출석은 Zoom/CSV 재업로드에 덮이지 않는 경우가 많습니다.
+            숫자가 이상하면 “어떤 경로로 넣었는지”부터 확인하세요.
+          </div>
+
+          <h4>E. 출결 사유폼 검토 (당일~익일)</h4>
+          <ol class="steps">
+            <li>정규반 → <strong>출결 사유</strong> 제출 목록</li>
+            <li>결석·지각·화면 미공유 등 사유 검토</li>
+            <li>벌점 자동 정리는 주기 작업이라 <strong>즉시 반영이 아닐 수 있음</strong> (최대 약 1시간)</li>
+          </ol>
+
+          <h4>F. 상벌점</h4>
+          <ol class="steps">
+            <li>일상 운영 → <strong>상벌점 CSV 업로드</strong></li>
+            <li>회원 식별키·분반·점수·사유를 채운 CSV 업로드</li>
+            <li>「상벌점 기록」에서 검수 → 사이트 「내 현재 상태」총점 확인</li>
+          </ol>
+          <span class="path-line">/admin/regulars/pointrecord/import-csv/</span>
+          <p class="where" style="margin-top:8px">
+            B포인트는 수료 총점과 별개입니다. 지급은 <strong>일상 운영 → B 포인트 지급</strong>.
+          </p>
+
+          <h4>G. 주간 점검</h4>
+          <ol class="steps">
+            <li>대시보드·지표 → <strong>정규반 운영</strong></li>
+            <li>출석률·제출률이 낮은 분반을 찾고, 해당 분반·회원에 안내</li>
+          </ol>
+          <span class="path-line">/admin/regulars/dashboard/</span>
+
+          <h4>H. 시즌 — 조별활동 · 블로그 챌린지</h4>
+          <ul class="compact-list">
+            <li><strong>조별활동:</strong> 정규반 → 조별활동 생성 → 정보 제출 기간 → 자동/수동 팀 매칭 → 일지·채점 → 조장 상점/중도이탈 벌점 액션</li>
+            <li><strong>블로그:</strong> 주제 등록 → 제출 목록에서 스탬프 지급(승인) → (시즌 정책에 따라) 보너스 상점 액션</li>
+            <li>중도이탈 현황: 대시보드·지표 → 조별활동·중도이탈</li>
+          </ul>
         </div>
       </section>
 
@@ -279,12 +352,46 @@
             <figcaption><strong>Learning</strong> — 예: 공모전 목록</figcaption>
           </figure>
           <div class="aside">
-            <h4>운영진</h4>
+            <h4>사이트 하위</h4>
             <ul>
-              <li>어드민 <strong>Learning</strong></li>
-              <li>강의·WAVE 심사, VOD 입금은 <strong>일상 운영</strong> 대기열</li>
-              <li>담당 없는 승인은 임의 처리하지 않음</li>
+              <li>공모전 · 클래스 · 코딩 테스트</li>
+              <li>자격증 · 수료시험 · 정부교육</li>
             </ul>
+          </div>
+        </div>
+
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>Learning 탭 운영 방법</h3>
+          <p class="where">왼쪽 탭 <strong>Learning</strong> + 승인 대기는 <strong>일상 운영</strong></p>
+
+          <h4>1) 강의·클래스 심사 (공개 전)</h4>
+          <ol class="steps">
+            <li>일상 운영 → <strong>강의·클래스 심사 대기</strong> (또는 Learning의 강의 심사 필터)</li>
+            <li>콘텐츠 확인 후 승인 / 반려</li>
+            <li>승인되면 사이트 Learning·클래스에 노출</li>
+          </ol>
+
+          <h4>2) WAVE·원데이·JOB 단편 심사</h4>
+          <ol class="steps">
+            <li>일상 운영 → <strong>단편(WAVE·원데이·JOB) 심사 대기</strong></li>
+            <li>검수 후 승인 / 반려</li>
+          </ol>
+
+          <h4>3) 유료 VOD 입금 승인</h4>
+          <ol class="steps">
+            <li>일상 운영 → <strong>강의 VOD 입금 승인</strong></li>
+            <li>입금 사실 확인 후 승인 → 회원 강의 접근 개방</li>
+          </ol>
+
+          <h4>4) 공모전·스터디·수료시험</h4>
+          <ul class="compact-list">
+            <li>공모전 제출·평가: Learning → 공모전 제출 / 평가 시트</li>
+            <li>스터디: 공지(카테고리 study)·문제·신청·제출 메뉴</li>
+            <li>수료 시험: 출제·응시 기록 메뉴</li>
+          </ul>
+          <div class="callout warn" style="margin-top:10px">
+            담당이 정해진 심사·입금 큐는 임의 승인하지 마세요. 확실하지 않으면 URL과 건 정보를 붙여 확인합니다.
           </div>
         </div>
       </section>
@@ -310,12 +417,31 @@
             <figcaption><strong>커피챗</strong> — 일정·신청</figcaption>
           </figure>
         </div>
-        <div class="ops-box">
-          <h4>어드민</h4>
-          <ul>
-            <li>왼쪽 탭 <strong>Knock</strong></li>
-            <li>신규 필수 범위는 아님. 담당 배정 후 진입</li>
-          </ul>
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>knock 탭 운영 방법</h3>
+          <p class="where">왼쪽 탭 <strong>Knock</strong> (피드 · HR패스 · 커피챗 · 채용 · 대외활동 · Picks · Magazine)</p>
+
+          <h4>하위 메뉴별</h4>
+          <table>
+            <thead><tr><th>사이트</th><th>어드민에서</th></tr></thead>
+            <tbody>
+              <tr><td>knock 피드</td><td>Knock → 피드/콘텐츠 모델에서 글·노출 관리</td></tr>
+              <tr><td>질문하기 / HR 패스</td><td>Knock → HR 패스 · 질문 관련 목록에서 접수·처리</td></tr>
+              <tr><td>커피챗</td><td>Knock → 커피챗 일정·신청. (기업분석 관심 신청과 별개일 수 있음)</td></tr>
+              <tr><td>채용 게시판</td><td>Knock → 채용공고 등록·수정</td></tr>
+              <tr><td>대외활동</td><td>Knock → 대외활동 정보 관리</td></tr>
+              <tr><td>BDAI Picks</td><td>제휴 카드·광고. 광고 대시보드 Picks 섹션 또는 제휴 공지와 연동</td></tr>
+            </tbody>
+          </table>
+          <ol class="steps">
+            <li>왼쪽 <strong>Knock</strong>을 열고 하위(피드/HR패스/커피챗 등)를 선택</li>
+            <li>대기·신청 건은 상태 필터로 pending부터 처리</li>
+            <li>사이트 <code>/knock/?tab=…</code>에서 노출·신청 결과 확인</li>
+          </ol>
+          <div class="callout note" style="margin-top:10px">
+            정규반 주간 운영과 별 축입니다. 담당이 배정된 뒤 깊게 들어가면 됩니다.
+          </div>
         </div>
       </section>
 
@@ -330,9 +456,17 @@
           <img src="./assets/img/report.png" alt="Report" width="1280" height="800" loading="lazy" />
           <figcaption><strong>Report</strong> — 리포트 목록/상세</figcaption>
         </figure>
-        <div class="ops-box">
-          <h4>어드민</h4>
-          <ul><li>왼쪽 탭 <strong>Report</strong> 또는 공지 카테고리</li></ul>
+
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>Report 탭 운영 방법</h3>
+          <p class="where">왼쪽 탭 <strong>Report</strong> · 또는 <strong>커뮤니티 → 공지</strong> (카테고리 Gen Z / Trend Z)</p>
+          <ol class="steps">
+            <li>Report 허브 바로가기 또는 공지 목록에서 카테고리 필터</li>
+            <li>리포트 글 작성·수정 (제목, 본문, 대표 이미지, 노출 기간)</li>
+            <li>사이트 Report 탭에서 노출 확인</li>
+            <li>기업·단체 리포트 문의가 있으면 Report/문의 관련 목록에서 처리</li>
+          </ol>
         </div>
       </section>
 
@@ -358,19 +492,39 @@
           </figure>
         </div>
 
-        <h3>행사 운영 흐름</h3>
-        <div class="flow">
-          <span>공지 작성</span><span class="arrow">→</span>
-          <span>기간·정원·Zoom</span><span class="arrow">→</span>
-          <span>신청 승인</span><span class="arrow">→</span>
-          <span>안내 메일</span>
-        </div>
-        <div class="ops-box">
-          <h4>어드민</h4>
-          <ul>
-            <li>왼쪽 탭 <strong>커뮤니티</strong></li>
-            <li>현황: <strong>대시보드·지표 → 행사 신청</strong></li>
-          </ul>
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>커뮤니티 탭 운영 방법</h3>
+          <p class="where">왼쪽 탭 <strong>커뮤니티</strong> · 현황은 <strong>대시보드·지표 → 행사 신청</strong></p>
+
+          <h4>1) 일반 공지 / QnA</h4>
+          <ol class="steps">
+            <li>커뮤니티 → <strong>공지</strong>에서 글 작성 (카테고리·고정·노출 기간)</li>
+            <li>QnA·자유·후기 글은 커뮤니티 게시판 모델에서 조회·삭제·조치</li>
+            <li>사이트 커뮤니티 탭에서 노출·필터 확인</li>
+          </ol>
+
+          <h4>2) 행사 공지 + 신청 받기</h4>
+          <ol class="steps">
+            <li>공지 작성 시 행사 설정: 신청 기간, 정원, Zoom 링크·노출 시점 등</li>
+            <li>회원이 사이트에서 신청하면 <strong>행사 신청</strong> 목록에 쌓임</li>
+            <li>신청 건을 승인 / 대기 / 취소 처리</li>
+            <li>필요 시 Zoom 안내 메일·채팅 초대 메일 일괄 발송</li>
+          </ol>
+
+          <h4>3) 현황 보기</h4>
+          <ol class="steps">
+            <li>대시보드·지표 → <strong>행사 신청</strong></li>
+            <li>그룹·행사 필터로 신청·승인·정원 달성 확인</li>
+          </ol>
+          <span class="path-line">/admin/notices/event-applications/dashboard/</span>
+
+          <div class="flow" style="margin-top:12px">
+            <span>공지 작성</span><span class="arrow">→</span>
+            <span>기간·정원·Zoom</span><span class="arrow">→</span>
+            <span>신청 승인</span><span class="arrow">→</span>
+            <span>안내 메일</span>
+          </div>
         </div>
       </section>
 
@@ -394,6 +548,33 @@
               <li>알림 건수 → 사이트 활동·운영 처리 결과</li>
             </ul>
           </div>
+        </div>
+
+        <div class="admin-guide">
+          <span class="label">어드민에서</span>
+          <h3>마이페이지에 영향을 주는 작업</h3>
+          <p class="where">마이페이지 전용 편집 화면은 거의 없고, 다른 탭 작업 결과가 여기 숫자로 모입니다.</p>
+          <table>
+            <thead><tr><th>회원에게 보이는 것</th><th>어드민에서 하는 일</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>계정·회원 유형</td>
+                <td>회원·권한 → 회원 승인/유형 수정</td>
+              </tr>
+              <tr>
+                <td>블로그 스탬프</td>
+                <td>정규반 → 블로그 챌린지 제출 → 스탬프 지급(승인)</td>
+              </tr>
+              <tr>
+                <td>B포인트 알림</td>
+                <td>일상 운영 → B 포인트 지급</td>
+              </tr>
+              <tr>
+                <td>HR 패스 알림</td>
+                <td>Knock → HR 패스 관련 처리</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </section>
 
@@ -433,12 +614,55 @@
           </tbody>
         </table>
 
-        <h3>일상 운영에서 자주 쓰는 것</h3>
-        <ul class="compact-list">
-          <li>출석 CSV · 상벌점 CSV · 정규반(수강) CSV</li>
-          <li>B포인트 지급</li>
-          <li>강의/WAVE 심사, VOD 입금, 첨삭 승인 대기열</li>
-        </ul>
+        <div class="admin-guide">
+          <span class="label">어드민 허브 빠른 사용</span>
+          <h3>왼쪽 탭을 이렇게 쓰면 됩니다</h3>
+          <table>
+            <thead><tr><th>왼쪽 탭</th><th>언제 여나</th><th>대표 작업</th></tr></thead>
+            <tbody>
+              <tr>
+                <td>대시보드·지표</td>
+                <td>현황·이상치 확인</td>
+                <td>정규반 운영, 행사 신청, 라인업</td>
+              </tr>
+              <tr>
+                <td>일상 운영</td>
+                <td>매일·매주 반복</td>
+                <td>출석/상벌점/수강 CSV, B포인트, 심사·입금·첨삭 큐</td>
+              </tr>
+              <tr>
+                <td>회원·권한</td>
+                <td>가입·역할</td>
+                <td>승인, 유형, 강사/현직자 신청</td>
+              </tr>
+              <tr>
+                <td>정규반</td>
+                <td>수업 데이터</td>
+                <td>분반, 수강, 출결, 과제, 조별, 블로그</td>
+              </tr>
+              <tr>
+                <td>커뮤니티</td>
+                <td>공지·행사</td>
+                <td>공지 작성, 신청 승인</td>
+              </tr>
+              <tr>
+                <td>Learning / Knock / …</td>
+                <td>담당 영역</td>
+                <td>위 사이트 탭 설명 참고</td>
+              </tr>
+              <tr>
+                <td>BDAI 학회원 모집 / Form</td>
+                <td>모집·설문 시즌</td>
+                <td>서베이, 입금 CSV, 폼 응답 승인</td>
+              </tr>
+            </tbody>
+          </table>
+          <h4>막히면</h4>
+          <ol class="steps">
+            <li>어드민 화면의 <strong>Daybear(도움말)</strong>에서 키워드 검색 (출석, 상벌점, 모집…)</li>
+            <li>이 메뉴얼에서 해당 사이트 탭 섹션의 「어드민에서」 블록 확인</li>
+          </ol>
+        </div>
       </section>
 
       <section id="weekly" data-search="주간 운영">
@@ -465,7 +689,7 @@
         </ol>
       </section>
 
-      <p class="footer">BDAI LMS 운영진 소개 메뉴얼 · v0.6 · 실제 화면 캡처 · 이미지 크기 제한 적용</p>
+      <p class="footer">BDAI LMS 운영진 소개 메뉴얼 · v0.7 · 사이트 탭별 어드민 절차 상세</p>
     </main>
   </div>
   <script src="./assets/app.js"></script>

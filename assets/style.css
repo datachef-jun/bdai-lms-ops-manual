@@ -477,6 +477,48 @@ h3:first-of-type { margin-top: 0; }
 }
 .ops-box li { margin-bottom: 4px; }
 
+.admin-guide {
+  margin: 18px 0 0;
+  padding: 16px 18px;
+  border: 1px solid #c7d7e8;
+  border-radius: 14px;
+  background: linear-gradient(180deg, #f4f8fc 0%, #fff 48%);
+}
+.admin-guide > .label {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--sky);
+  margin-bottom: 6px;
+}
+.admin-guide > h3 {
+  margin: 0 0 10px;
+  font-size: 1.05rem;
+}
+.admin-guide .where {
+  margin: 0 0 12px;
+  font-size: 0.9rem;
+  color: var(--ink-soft);
+}
+.admin-guide h4 {
+  margin: 16px 0 6px;
+  font-size: 0.92rem;
+}
+.admin-guide h4:first-of-type { margin-top: 4px; }
+.admin-guide .steps { margin-top: 8px; }
+.admin-guide .path-line {
+  display: inline-block;
+  margin: 2px 0 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 0.78rem;
+  color: var(--sky);
+  background: var(--sky-soft);
+  padding: 3px 8px;
+  border-radius: 8px;
+}
+
 .tab-map {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
