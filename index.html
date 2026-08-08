@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BDAI LMS 운영진 빠른 시작 메뉴얼</title>
-  <meta name="description" content="처음 어드민을 쓰는 운영진을 위한 BDAI LMS 핵심 메뉴얼" />
+  <title>BDAI LMS 운영진 메뉴얼</title>
+  <meta name="description" content="BDAI LMS를 왜 쓰는지·무엇을 관리하는지부터 설명하는 신규 운영진 메뉴얼" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,280 +18,609 @@
   <div class="shell">
     <aside class="nav" aria-label="목차">
       <a class="brand" href="#top">BDAI Ops Manual</a>
-      <p class="brand-sub">운영진 빠른 시작 · v0.1</p>
-      <input id="manual-search" class="nav-search" type="search" placeholder="검색 (출결, 행사…)" aria-label="메뉴얼 검색" />
+      <p class="brand-sub">운영진 메뉴얼 · v0.2</p>
+      <input id="manual-search" class="nav-search" type="search" placeholder="검색 (출결, 수료…)" aria-label="메뉴얼 검색" />
       <ol>
-        <li><a href="#start">1. 시작하기</a></li>
-        <li><a href="#map">2. 메뉴 지도</a></li>
-        <li><a href="#weekly">3. 주간 루틴</a></li>
-        <li><a href="#members">4. 회원·수강</a></li>
-        <li><a href="#attendance">5. 출결·상벌점</a></li>
-        <li><a href="#events">6. 공지·행사</a></li>
-        <li><a href="#queues">7. 일상 운영 큐</a></li>
-        <li><a href="#season">8. 시즌 업무</a></li>
-        <li><a href="#cheatsheet">9. URL 치트시트</a></li>
-        <li><a href="#help">10. 막힐 때</a></li>
+        <li><a href="#why">1. LMS는 무엇을 하는가</a></li>
+        <li><a href="#start">2. 어드민 시작하기</a></li>
+        <li><a href="#map">3. 메뉴 지도와 목적</a></li>
+        <li><a href="#journey">4. 회원 여정</a></li>
+        <li><a href="#weekly">5. 주간 정규반 운영</a></li>
+        <li><a href="#attendance">6. 출결·상벌점</a></li>
+        <li><a href="#events">7. 공지·행사</a></li>
+        <li><a href="#queues">8. 일상 승인 큐</a></li>
+        <li><a href="#season">9. 시즌 프로그램</a></li>
+        <li><a href="#cheatsheet">10. URL 치트시트</a></li>
+        <li><a href="#help">11. 막힐 때</a></li>
       </ol>
     </aside>
 
     <main id="main" class="main">
       <header class="hero" id="top">
-        <div class="kicker">For new operators</div>
-        <h1>처음 쓰는 사람을 위한<br />LMS 운영 핵심만</h1>
+        <div class="kicker">For new operators · v0.2</div>
+        <h1>LMS를 “왜” 쓰는지부터<br />잡고 가는 운영 메뉴얼</h1>
         <p>
-          메뉴가 많아서 전부 외울 필요는 없습니다.
-          아래 <strong>10개 섹션</strong>만 익히면 일상 운영의 80%를 처리할 수 있습니다.
-          세부 기능은 어드민 안의 <strong>Daybear 헬프</strong>에서 “어떻게 해요?”로 검색하세요.
+          버튼 위치만 외우면 금방 헷갈립니다.
+          이 문서는 <strong>학회원 화면에서 무엇이 보이는지</strong>와
+          <strong>운영진이 어드민에서 무엇을 책임지는지</strong>를 연결해서 설명합니다.
+          세부 화면 조작이 막히면 어드민의 <strong>Daybear</strong>에서 키워드로 검색하세요.
         </p>
         <div class="meta-row">
           <span class="pill">대상: 신규 운영진</span>
-          <span class="pill">범위: 핵심만 (고도화 예정)</span>
-          <span class="pill">어드민 진입: <code>/admin/</code></span>
+          <span class="pill">읽는 법: 목적 → 회원 경험 → 운영 작업</span>
+          <span class="pill">어드민: <code>/admin/</code></span>
         </div>
       </header>
 
-      <section id="start" data-search="로그인 시작 daybear 슬랙 2fa 스태프 권한 개인계정">
-        <h2>1. 시작하기 (5분)</h2>
-        <p class="lead">접속 → 권한 확인 → 홈 위치만 잡으면 됩니다.</p>
-        <ol class="steps">
-          <li>본인 계정으로 LMS 로그인 후 <code>/admin/</code> 또는 <code>/admin/dashboard/</code>로 이동합니다.</li>
-          <li>어드민이 안 열리면 <code>is_staff</code> 권한이 없는 것입니다. 시니어 운영진/슈퍼유저에게 스태프 권한 부여를 요청하세요.</li>
-          <li>공용 계정 대신 <strong>개인 계정</strong> 사용을 권장합니다. (누가 무엇을 바꿨는지 추적 가능)</li>
-          <li>공용 계정을 쓰는 경우 Slack 6자리 2차 인증이 뜰 수 있습니다. 지정된 슬랙 채널의 번호를 확인하세요.</li>
-          <li>화면 어딘가의 <strong>Daybear</strong>(도움말)에서 “출석”, “행사”, “상벌점”처럼 검색해 보세요. 이게 공식 플레이북입니다.</li>
-        </ol>
-        <div class="callout tip">
-          <strong>첫날 목표:</strong> 운영 홈(<code>/admin/dashboard/</code>)을 열고, 왼쪽 허브 이름만 훑어본 뒤 Daybear로 “출석 CSV”를 한 번 검색해 보기.
+      <!-- 1 -->
+      <section id="why" data-search="lms 목적 왜 쓰는지 학회원 정규반 수료 포털">
+        <h2>1. LMS는 무엇을 하는가</h2>
+        <div class="purpose">
+          <span class="label">한 줄 목적</span>
+          <p>
+            BDAI LMS는 학회원이 <strong>수업·과제·출결·공지·행사·커뮤니티</strong>를 한곳에서 쓰고,
+            운영진이 그 데이터를 <strong>승인·반영·검수·안내</strong>할 수 있게 만든 운영 포털입니다.
+            엑셀·카톡·구글폼으로 흩어지던 일을 LMS에 모아, 누가 어느 무엇을 했는지 남기는 것이 핵심입니다.
+          </p>
+        </div>
+
+        <div class="prose">
+          <p>크게 보면 LMS에는 세 층이 있습니다.</p>
+          <ul>
+            <li><strong>학회원 포털</strong> — 로그인 후 대시보드, 정규반, 공지, 커뮤니티, Knock 등을 사용</li>
+            <li><strong>강사 포털</strong> — 담당 분반의 출결·과제 확인·피드백 (<code>/instructor/</code>)</li>
+            <li><strong>운영진 어드민</strong> — 회원 승인, 분반 배정, 출결/상벌점 반영, 행사 승인, 시즌 프로그램 조율 (<code>/admin/</code>)</li>
+          </ul>
+          <p>
+            운영진이 어드민에서 한 작업은 거의 항상 <strong>학회원 화면에 바로 영향</strong>을 줍니다.
+            출석을 올리면 정규반 출결 탭이 바뀌고, 상벌점을 주면 총점이 바뀌며,
+            행사 신청을 승인하면 회원에게 Zoom/안내가 열립니다.
+            그래서 “메뉴를 눌렀다”가 아니라 <strong>“회원에게 어떤 상태가 바뀌는가”</strong>로 생각하면 헷갈림이 줄어듭니다.
+          </p>
+        </div>
+
+        <h3>정규반 운영이 특히 중요한 이유</h3>
+        <div class="prose">
+          <p>
+            정규반은 LMS의 중심입니다. 기수·분반에 배정된 학회원이 매주 수업을 듣고,
+            출석·과제·상벌점·조별활동·블로그 챌린지 등이 <strong>수료/우수 조건</strong>과 연결됩니다.
+            운영진의 주간 루틴(출결 반영 → 사유 검토 → 상벌점 → 제출률 점검)은
+            “행정 잡무”가 아니라 <strong>수료 기준을 공정하게 유지하는 일</strong>입니다.
+          </p>
+        </div>
+
+        <div class="flow" aria-label="큰 흐름">
+          <span>가입·승인</span><span class="arrow">→</span>
+          <span>분반 배정</span><span class="arrow">→</span>
+          <span>주간 수업 운영</span><span class="arrow">→</span>
+          <span>출결·과제·점수</span><span class="arrow">→</span>
+          <span>수료·시즌 프로그램</span>
         </div>
       </section>
 
-      <section id="map" data-search="메뉴 지도 허브 일상운영 정규반 커뮤니티 knock 모집">
-        <h2>2. 메뉴 지도 (어디 가면 되나)</h2>
-        <p class="lead">왼쪽은 허브입니다. 자주 쓰는 것만 기억하세요.</p>
-        <div class="grid-2">
-          <article class="card">
-            <strong>운영 홈 / 대시보드·지표</strong>
-            <p>전체 현황을 보는 출발점. 막히면 여기로 돌아오세요.</p>
-            <span class="path">/admin/dashboard/</span>
-          </article>
-          <article class="card">
-            <strong>일상 운영</strong>
-            <p>매일 쓰는 도구: 출석·상벌점 CSV, B포인트, 심사/승인 대기열.</p>
-          </article>
-          <article class="card">
-            <strong>정규반</strong>
-            <p>분반, 수강, 출결, 과제, 조별활동, 블로그 챌린지.</p>
-          </article>
-          <article class="card">
-            <strong>커뮤니티</strong>
-            <p>공지 작성, 행사 신청 승인, 행사 대시보드.</p>
-          </article>
-          <article class="card">
-            <strong>회원·권한</strong>
-            <p>회원 승인, 유형 변경, 스태프/강사 관련.</p>
-          </article>
-          <article class="card">
-            <strong>BDAI 학회원 모집</strong>
-            <p>모집 시즌에만. 서베이·입금·분반찾기.</p>
-          </article>
+      <!-- 2 -->
+      <section id="start" data-search="로그인 시작 daybear 슬랙 2fa 스태프 권한 개인계정 어드민">
+        <h2>2. 어드민 시작하기</h2>
+        <div class="purpose">
+          <span class="label">이 섹션의 목적</span>
+          <p>
+            어드민은 학회원 포털과 다른 “운영 전용 뒷문”입니다.
+            스태프 권한이 있는 계정만 들어갈 수 있고, 여기서 바꾼 값은 서비스 전체에 영향을 줍니다.
+            첫날은 <strong>들어가기 → 홈 위치 잡기 → Daybear로 검색하는 습관</strong>만 만들면 됩니다.
+          </p>
         </div>
+
+        <ol class="steps">
+          <li>본인 계정으로 LMS에 로그인한 뒤 <code>/admin/</code> 또는 <code>/admin/dashboard/</code>로 이동합니다.</li>
+          <li>어드민이 안 열리면 계정에 스태프 권한(<code>is_staff</code>)이 없는 것입니다. 시니어/슈퍼유저에게 권한 부여를 요청하세요.</li>
+          <li><strong>개인 계정</strong>으로 로그인하세요. 공용 계정을 쓰면 “누가 승인/수정했는지” 추적이 어려워집니다.</li>
+          <li>공용 계정을 쓸 때는 Slack 6자리 2차 인증이 뜰 수 있습니다. 지정 채널의 번호를 확인합니다.</li>
+          <li>어드민 안의 <strong>Daybear</strong>에서 “출석”, “상벌점”, “행사”, “모집”처럼 검색해 보세요. 공식 플레이북(단계 안내)이 나옵니다.</li>
+        </ol>
+
+        <div class="callout tip">
+          <strong>첫날 실습:</strong> 운영 홈을 연다 → 왼쪽 허브 이름만 훑는다 → Daybear에 “출석 CSV”를 검색해 단계가 뜨는지 확인한다.
+          아직 실제 업로드는 하지 않아도 됩니다.
+        </div>
+      </section>
+
+      <!-- 3 -->
+      <section id="map" data-search="메뉴 지도 허브 목적 일상운영 정규반 커뮤니티 회원 모집">
+        <h2>3. 메뉴 지도와 목적</h2>
+        <div class="purpose">
+          <span class="label">이 섹션의 목적</span>
+          <p>
+            왼쪽 허브는 “앱 목록”이 아니라 <strong>운영 업무 구역</strong>입니다.
+            어디에 들어가야 하는지 모르는 상태는 대부분 “이 일이 어느 구역 일인지”가 안 잡힌 상태입니다.
+          </p>
+        </div>
+
+        <table>
+          <thead>
+            <tr><th>허브</th><th>LMS에서 쓰는 목적</th><th>대표 작업</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>운영 홈 / 대시보드·지표</strong></td>
+              <td>전체 현황을 한눈에 보고 출발점을 잡기</td>
+              <td>지표 확인, 행사 신청 현황, 정규반 대시보드 진입</td>
+            </tr>
+            <tr>
+              <td><strong>일상 운영</strong></td>
+              <td>매일·매주 반복되는 반영/승인 작업을 빠르게 처리</td>
+              <td>출석·상벌점 CSV, B포인트, 심사·입금·첨삭 대기열</td>
+            </tr>
+            <tr>
+              <td><strong>정규반</strong></td>
+              <td>기수·분반 단위로 수업 운영 데이터 관리</td>
+              <td>분반/수강/출결/과제/조별활동/블로그</td>
+            </tr>
+            <tr>
+              <td><strong>커뮤니티</strong></td>
+              <td>학회원에게 공지·행사를 알리고 신청을 받기</td>
+              <td>공지 작성, 행사 신청 승인, Zoom/메일 안내</td>
+            </tr>
+            <tr>
+              <td><strong>회원·권한</strong></td>
+              <td>누가 서비스를 쓸 수 있는지(계정·역할) 통제</td>
+              <td>회원 승인, 유형 변경, 스태프/강사 관련</td>
+            </tr>
+            <tr>
+              <td><strong>BDAI 학회원 모집</strong></td>
+              <td>새 기수 모집 시즌에 지원·입금·분반 추천을 받기</td>
+              <td>모집 페이지, 서베이, 입금 CSV, 분반찾기</td>
+            </tr>
+            <tr>
+              <td><strong>BDAI Form</strong></td>
+              <td>구글폼 대신 LMS 안에서 설문/신청을 받고 승인·집계</td>
+              <td>폼 생성, 공개 링크 공유, 응답 승인, 대시보드</td>
+            </tr>
+            <tr>
+              <td><strong>Learning / Knock 등</strong></td>
+              <td>강의·채용·커피챗 등 확장 영역 (담당 팀 중심)</td>
+              <td>신규 운영진 필수 범위는 아님</td>
+            </tr>
+          </tbody>
+        </table>
+
         <div class="callout note">
-          Knock / 광고 / 캠퍼스맵 / 기업분석 / HR / 비용 등은 <strong>담당 팀이 있을 때</strong> 들어가면 됩니다. 신규 운영진 필수 범위는 아닙니다.
+          처음에는 <strong>회원·권한 → 정규반 → 일상 운영 → 커뮤니티</strong> 네 구역만 익히면 됩니다.
+          Knock/광고/캠퍼스맵/기업분석/HR/비용은 담당이 생길 때 들어가면 됩니다.
         </div>
       </section>
 
-      <section id="weekly" data-search="주간 루틴 체크리스트 수업 출결 과제 대시보드">
-        <h2>3. 주간 루틴 (정규반 운영의 뼈대)</h2>
-        <p class="lead">수업이 있는 주에는 이 순서만 지키면 크게 흔들리지 않습니다.</p>
-        <ul class="checklist">
-          <li><input type="checkbox" /> 수업 전: 분반 Zoom/자료/과제 공지 상태 확인</li>
-          <li><input type="checkbox" /> 수업 후: 출석 반영 (Zoom 또는 CSV)</li>
-          <li><input type="checkbox" /> 출결 사유폼 검토 (결석/지각 사유)</li>
-          <li><input type="checkbox" /> 필요 시 상벌점 반영</li>
-          <li><input type="checkbox" /> 과제 제출률 점검 → 미제출 독려</li>
-          <li><input type="checkbox" /> <code>/admin/regulars/dashboard/</code>에서 분반 현황 한 번 훑기</li>
-        </ul>
-        <div class="callout tip">
-          세부 화면 경로는 아래 5·9번을 보세요. “매주 무엇을 할지”만 먼저 몸에 익히면 됩니다.
+      <!-- 4 -->
+      <section id="journey" data-search="회원 여정 가입 승인 수강 enrollment 분반 배정 기수 유형">
+        <h2>4. 회원 여정 — 가입부터 분반 배정까지</h2>
+        <div class="purpose">
+          <span class="label">왜 이 일이 필요한가</span>
+          <p>
+            회원가입만으로는 정규반 수업을 들을 수 없습니다.
+            <strong>계정 승인</strong>으로 “우리 학회 멤버로 쓸 수 있는지”를 열고,
+            <strong>수강(Enrollment) 배정</strong>으로 “어느 기수·어느 분반 수업을 듣는지”를 연결해야
+            학회원 정규반 홈에 분반 카드가 나타납니다.
+          </p>
         </div>
-      </section>
 
-      <section id="members" data-search="회원 승인 수강 enrollment csv 분반 배정 기수">
-        <h2>4. 회원 승인 · 수강 배정</h2>
-        <p class="lead">사람이 LMS에 들어오고, 분반에 들어가게 만드는 일.</p>
+        <div class="flow">
+          <span>회원가입</span><span class="arrow">→</span>
+          <span>운영진 승인</span><span class="arrow">→</span>
+          <span>회원 유형 설정</span><span class="arrow">→</span>
+          <span>수강 CSV/배정</span><span class="arrow">→</span>
+          <span>정규반 홈에 분반 노출</span>
+        </div>
 
-        <h3>회원 승인</h3>
+        <div class="dual">
+          <div class="side member">
+            <div class="who">학회원 경험</div>
+            <p>
+              가입·이메일 인증 후 승인 전이면 대기 안내를 봅니다.
+              승인되고 분반에 배정되면 <code>/regular/</code>에 분반 카드·줌·과제·출결이 보입니다.
+            </p>
+          </div>
+          <div class="side ops">
+            <div class="who">운영진 책임</div>
+            <p>
+              잘못된 승인/배정은 곧바로 “수업이 안 보여요”, “출석이 없어요” 문의로 이어집니다.
+              승인 상태와 분반 매핑을 정확히 맞추는 것이 첫 관문입니다.
+            </p>
+          </div>
+        </div>
+
+        <h3>4-1. 회원 승인</h3>
+        <div class="prose">
+          <p>
+            위치: <code>/admin/accounts/user/</code> (허브: 회원·권한).<br />
+            여기서는 단순 “가입 여부”가 아니라 <strong>회원 상태</strong>(승인 대기/승인/거절)와
+            <strong>회원 유형</strong>(정규반/일반/게스트/MOU/졸업 등)을 맞춥니다.
+            유형에 따라 보이는 메뉴·권한이 달라질 수 있습니다.
+          </p>
+        </div>
         <ol class="steps">
-          <li><code>/admin/accounts/user/</code>에서 승인 대기 회원을 찾습니다.</li>
-          <li>회원 상태(승인)와 회원 유형(정규반/일반 등)을 맞춥니다.</li>
-          <li>운영진이 될 사람에게만 스태프 권한을 부여합니다. 남발하지 마세요.</li>
+          <li>승인 대기 회원을 필터로 찾습니다.</li>
+          <li>신분/명단과 맞는지 확인한 뒤 승인합니다.</li>
+          <li>정규반 수업을 들을 사람이면 유형을 정규반 쪽으로 맞춥니다.</li>
+          <li>운영진이 될 사람에게만 스태프 권한을 부여합니다. 남발하면 실수로 데이터가 바뀝니다.</li>
         </ol>
 
-        <h3>수강(Enrollment) CSV</h3>
+        <h3>4-2. 수강(Enrollment) 배정</h3>
+        <div class="prose">
+          <p>
+            “이 회원이 13기 A분반을 수강한다”는 관계가 <strong>Enrollment</strong>입니다.
+            이게 있어야 출석·과제·상벌점·블로그 스탬프가 그 분반에 쌓입니다.
+            대량 배정은 CSV로 합니다.
+          </p>
+        </div>
         <ol class="steps">
-          <li>「일상 운영」또는 「정규반」→ <strong>정규반 CSV 업로드</strong>.</li>
-          <li>기수/분반/회원 식별값이 어드민 설정과 같은지 확인 후 업로드.</li>
-          <li>업로드 결과 메시지를 읽고, 분반·수강 목록에서 인원 수를 검수합니다.</li>
+          <li>「일상 운영」또는 「정규반」→ <strong>정규반 CSV 업로드</strong> (<code>/admin/regulars/enrollment/import-csv/</code>)</li>
+          <li>기수/분반/회원 식별값(이메일 등)이 어드민 분반·계정과 같은지 확인</li>
+          <li>소수 행으로 테스트 업로드 → 결과 메시지 확인 → 본 업로드</li>
+          <li>분반·수강 목록에서 인원 수가 기대와 같은지 검수</li>
         </ol>
         <div class="callout warn">
-          대량 업로드 전에는 <strong>소수 행으로 테스트</strong>하세요. 중복 시 스킵/갱신 규칙이 달라질 수 있습니다.
+          중복 업로드 시 스킵/갱신 규칙이 달라질 수 있습니다. 결과 메시지를 꼭 읽고,
+          “올렸으니 끝”이 아니라 <strong>인원 수 검수</strong>까지가 한 세트입니다.
+        </div>
+
+        <h3>4-3. 기수 라인업(참고)</h3>
+        <div class="prose">
+          <p>
+            <code>/admin/regulars/cohort-plan/</code>은 기수별 분반 구성·라인업을 보는 운영 화면입니다.
+            새 기수 준비나 분반 구조를 점검할 때 씁니다. 매주 필수는 아닙니다.
+          </p>
         </div>
       </section>
 
-      <section id="attendance" data-search="출석 출결 csv zoom 상벌점 벌점 포인트 b포인트 사유폼">
-        <h2>5. 출결 · 상벌점 · B포인트</h2>
-        <p class="lead">가장 자주 만지는 영역입니다.</p>
-
-        <h3>출석 반영</h3>
-        <ol class="steps">
-          <li>일괄: 「일상 운영」→ <strong>출석 CSV 업로드</strong> (<code>/admin/regulars/attendancerecord/import-csv/</code>)</li>
-          <li>분반별 Zoom: 분반 상세의 Zoom 출석 가져오기</li>
-          <li>반영 후 「출석 기록」에서 분반·날짜 건수를 검수</li>
-          <li>사유폼 제출은 「출결 사유」메뉴에서 검토</li>
-        </ol>
-        <div class="callout note">
-          FORM/MANUAL로 넣은 출석은 Zoom 재업로드에 덮어쓰지 않도록 보호되는 경우가 많습니다.
-          숫자가 이상하면 “어떤 경로로 넣었는지”부터 확인하세요. 벌점 자동정리는 보통 주기적으로 돕니다.
+      <!-- 5 -->
+      <section id="weekly" data-search="주간 루틴 정규반 수업 과제 대시보드 독려">
+        <h2>5. 주간 정규반 운영</h2>
+        <div class="purpose">
+          <span class="label">왜 주간 루틴이 있나</span>
+          <p>
+            정규반은 “한 번 세팅하고 끝나는” 시스템이 아닙니다.
+            매주 수업이 열리고, 출석·과제·점수가 쌓이며, 그게 수료 판단 재료가 됩니다.
+            주간 루틴의 목적은 <strong>데이터가 실제 수업과 어긋나지 않게 유지</strong>하는 것입니다.
+          </p>
         </div>
 
-        <h3>상벌점</h3>
+        <div class="dual">
+          <div class="side member">
+            <div class="who">학회원 경험</div>
+            <p>
+              정규반 홈·분반 페이지에서 Zoom, 자료, 과제 제출, 출결 현황, 총점(상점/벌점),
+              출결 사유폼, 블로그/조별활동 링크를 봅니다.
+            </p>
+          </div>
+          <div class="side ops">
+            <div class="who">운영진 책임</div>
+            <p>
+              수업 후 출석을 반영하고, 사유폼·과제를 점검하며,
+              빠지거나 이상한 수치를 정규반 대시보드에서 먼저 발견합니다.
+            </p>
+          </div>
+        </div>
+
+        <h3>권장 주간 순서</h3>
+        <ul class="checklist">
+          <li><input type="checkbox" /> <strong>수업 전</strong> — 분반 Zoom/자료/과제 링크가 학회원에게 보이는지 확인</li>
+          <li><input type="checkbox" /> <strong>수업 직후</strong> — Zoom 또는 CSV로 출석 반영</li>
+          <li><input type="checkbox" /> <strong>당일~다음날</strong> — 출결 사유폼 검토 (결석/지각/화면 미공유 등)</li>
+          <li><input type="checkbox" /> <strong>주중</strong> — 필요 시 상벌점 수동 반영, 과제 제출률 확인·독려</li>
+          <li><input type="checkbox" /> <strong>주말 전</strong> — <code>/admin/regulars/dashboard/</code>에서 분반별 이상치 훑기</li>
+        </ul>
+
+        <div class="prose">
+          <p>
+            정규반 대시보드의 목적은 “모든 분반을 일일이 열어보지 않고도
+            제출률·출석률이 낮은 곳을 먼저 발견”하는 것입니다.
+            발견한 뒤 해당 분반·회원에게 안내(메일/문자/공지)를 보냅니다.
+          </p>
+        </div>
+      </section>
+
+      <!-- 6 -->
+      <section id="attendance" data-search="출석 출결 csv zoom 상벌점 벌점 상점 포인트 b포인트 사유폼 수료 auto_points">
+        <h2>6. 출결 · 상벌점 · B포인트</h2>
+        <div class="purpose">
+          <span class="label">왜 이 영역이 가장 중요한가</span>
+          <p>
+            출결과 상벌점은 학회원에게 가장 민감한 숫자입니다.
+            출석은 “그 주에 수업에 참여했는지”의 기록이고,
+            상·벌점은 규정에 따른 가산/감점으로 <strong>총점·수료 판단</strong>에 쓰입니다.
+            운영진이 여기를 늦게 반영하거나 잘못 덮어쓰면 문의·이의가 바로 들어옵니다.
+          </p>
+        </div>
+
+        <h3>6-1. 출석 — 무엇을 남기는 기록인가</h3>
+        <div class="prose">
+          <p>
+            출석 기록은 분반·날짜·회원 단위로 “출석/지각/결석/화면 미공유 등” 상태를 저장합니다.
+            학회원은 분반의 출결 탭에서 본인 상태를 봅니다.
+            운영진은 Zoom 참석 로그 또는 CSV로 일괄 반영합니다.
+          </p>
+        </div>
+        <div class="dual">
+          <div class="side member">
+            <div class="who">학회원</div>
+            <p>
+              결석/지각 사유가 있으면 <strong>출결 사유폼</strong>을 제출합니다.
+              (규정: 수업 1시간 전까지 등 — 시즌 공지 기준을 따르세요.)
+            </p>
+          </div>
+          <div class="side ops">
+            <div class="who">운영진</div>
+            <p>
+              사유폼을 검토하고, Zoom/CSV 출석과 충돌이 없는지 확인합니다.
+              수기·사유폼으로 확정된 값은 Zoom 재업로드에 덮이지 않도록 보호되는 경우가 많습니다.
+            </p>
+          </div>
+        </div>
+        <ol class="steps">
+          <li>일괄: 「일상 운영」→ <strong>출석 CSV 업로드</strong> (<code>/admin/regulars/attendancerecord/import-csv/</code>)</li>
+          <li>분반별: 분반 상세의 Zoom 출석 가져오기</li>
+          <li>「출석 기록」에서 해당 분반·날짜 건수 검수</li>
+          <li>「출결 사유」메뉴에서 사유폼 제출 건 검토</li>
+        </ol>
+        <div class="callout note">
+          벌점 자동 정리는 보통 주기 작업(<code>auto_points</code>)으로 돌아갑니다.
+          사유폼을 올렸다고 해서 <strong>즉시</strong> 벌점이 사라지지 않을 수 있고, 최대 약 1시간 정도 지연될 수 있습니다.
+          문의가 오면 “반영 경로(사유폼/수기/Zoom)”와 “시간”을 먼저 확인하세요.
+        </div>
+
+        <h3>6-2. 상벌점 — 규정 집행 도구</h3>
+        <div class="prose">
+          <p>
+            상점은 우수 활동·이벤트·역할 수행 등에 주고 점수이고,
+            벌점은 결석/지각/과제 미제출/중도이탈 등 규정 위반에 대한 감점입니다.
+            일부는 시스템 자동, 일부는 운영진이 CSV·개별 기록으로 <strong>수동</strong> 부여합니다.
+            LMS에 남겨야 나중에 “왜 이 점수인가요?”에 답할 수 있습니다.
+          </p>
+          <ul>
+            <li><strong>자동에 가까운 것:</strong> 출결·과제 관련 벌점 정리, (정책에 따라) 블로그 승인 연동 등</li>
+            <li><strong>수동이 많은 것:</strong> 주간 이벤트 상점, 서베이/커뮤니티 이벤트, 우수조 상점 등</li>
+            <li><strong>조별활동 연동:</strong> 조장 상점, 중도이탈 벌점 (조별활동 설정값 + 어드민 액션)</li>
+          </ul>
+        </div>
         <ol class="steps">
           <li>「일상 운영」→ <strong>상벌점 CSV 업로드</strong></li>
           <li>회원 식별키(이메일 등)가 계정과 일치하는지 확인</li>
+          <li>사유를 구체적으로 적어 업로드 (문의 대응용)</li>
           <li>「상벌점 기록」에서 결과 검수 · 이상치만 개별 수정</li>
         </ol>
 
-        <h3>B포인트</h3>
+        <h3>6-3. B포인트 — 상벌점과 다른 재화</h3>
+        <div class="prose">
+          <p>
+            B포인트는 정규반 상벌점(수료용 총점)과 <strong>별개</strong>인 지급 재화/리워드 채널입니다.
+            캠페인·이벤트·보상성 지급에 씁니다. “수료 총점에 바로 들어간다”고 착각하지 마세요.
+            지급 시 사유를 남기면 나중에 정산·문의 대응이 쉽습니다.
+          </p>
+        </div>
         <ol class="steps">
-          <li>「일상 운영」→ <strong>B 포인트 지급</strong></li>
-          <li>단건 지급 또는 샘플 CSV로 일괄 지급</li>
-          <li>사유는 문의 대응용으로 구체적으로 남기기</li>
+          <li>「일상 운영」→ <strong>B 포인트 지급</strong> (<code>/admin/b-point/</code>)</li>
+          <li>단건: 회원 검색 후 금액·사유 입력</li>
+          <li>일괄: 샘플 CSV 작성 후 같은 화면에서 업로드</li>
+          <li>지급 기록에서 검수</li>
         </ol>
       </section>
 
-      <section id="events" data-search="공지 행사 이벤트 신청 승인 대기 줌 메일">
-        <h2>6. 공지 · 행사 신청</h2>
-        <p class="lead">공지 올리고 → 신청 받고 → 승인/안내하는 흐름.</p>
+      <!-- 7 -->
+      <section id="events" data-search="공지 행사 이벤트 신청 승인 대기 줌 메일 커뮤니티">
+        <h2>7. 공지 · 행사 신청</h2>
+        <div class="purpose">
+          <span class="label">왜 공지/행사를 LMS에서 하나</span>
+          <p>
+            카톡·인스타만으로 행사를 받으면 신청자 목록·정원·대기·Zoom 안내가 파편화됩니다.
+            LMS 공지/행사는 <strong>노출 → 신청 → 승인/대기 → 안내 발송 → 현황 집계</strong>를
+            한 데이터로 묶기 위한 기능입니다.
+          </p>
+        </div>
+
+        <div class="dual">
+          <div class="side member">
+            <div class="who">학회원</div>
+            <p>
+              <code>/notices/</code>에서 공지를 보고, 행사이면 신청/취소합니다.
+              승인·설정에 따라 Zoom 링크가 보일 수 있습니다.
+            </p>
+          </div>
+          <div class="side ops">
+            <div class="who">운영진</div>
+            <p>
+              공지 작성(기간·정원·Zoom), 신청 승인/대기 처리,
+              대시보드로 모집 현황 파악, 필요 시 일괄 메일 발송.
+            </p>
+          </div>
+        </div>
+
         <ol class="steps">
           <li>「커뮤니티」→ 공지에서 글을 작성합니다. 행사이면 신청 기간·정원·Zoom 등을 설정합니다.</li>
           <li>신청 건은 행사 신청 목록에서 승인 / 대기 / 취소를 처리합니다.</li>
           <li>현황은 <code>/admin/notices/event-applications/dashboard/</code>에서 모아서 봅니다.</li>
-          <li>필요 시 Zoom 안내 메일·채팅 초대 메일 등 일괄 발송 기능을 사용합니다.</li>
+          <li>필요 시 Zoom 안내 메일·채팅 초대 메일 등 일괄 발송을 사용합니다.</li>
         </ol>
         <div class="callout tip">
-          “몇 명 신청했지?”는 개별 목록보다 <strong>행사 신청 대시보드</strong>가 빠릅니다.
+          “몇 명 신청했지 / 부트캠프만 보고 싶다”는 개별 목록보다 <strong>행사 신청 대시보드</strong>가 빠릅니다.
+          필터로 그룹·행사를 좁혀 보세요.
         </div>
       </section>
 
-      <section id="queues" data-search="일상 운영 큐 심사 입금 첨삭 강의 wave vod">
-        <h2>7. 「일상 운영」대기열</h2>
-        <p class="lead">매일 한 번씩 열어볼 승인 큐입니다. 담당이 정해져 있으면 그 사람 기준으로 처리하세요.</p>
+      <!-- 8 -->
+      <section id="queues" data-search="일상 운영 큐 심사 입금 첨삭 강의 wave vod 승인 대기">
+        <h2>8. 「일상 운영」승인 큐</h2>
+        <div class="purpose">
+          <span class="label">왜 대기열이 따로 있나</span>
+          <p>
+            강의 공개, 유료 입금 확인, 첨삭 요청처럼 “사람이 판단해야 열리는 문”이 있습니다.
+            대기열은 이런 건들을 한곳에 모아 <strong>누락 없이 처리</strong>하기 위한 작업대입니다.
+            매일 한 번이라도 열어보는 습관이 중요합니다.
+          </p>
+        </div>
+
         <table>
           <thead>
-            <tr><th>큐</th><th>하는 일</th></tr>
+            <tr><th>큐</th><th>목적 (왜 승인하나)</th><th>처리 시 회원에게 생기는 일</th></tr>
           </thead>
           <tbody>
             <tr>
               <td>강의·클래스 심사</td>
-              <td>등록된 강의/클래스 콘텐츠 승인·반려</td>
+              <td>Learning에 올릴 콘텐츠 품질/정책을 검수</td>
+              <td>승인되면 회원에게 강의가 노출·수강 가능</td>
             </tr>
             <tr>
               <td>WAVE·원데이·JOB 심사</td>
-              <td>단편 콘텐츠 심사</td>
+              <td>단편 콘텐츠를 같은 기준으로 검수</td>
+              <td>승인된 단편이 공개됨</td>
             </tr>
             <tr>
               <td>강의 VOD 입금 승인</td>
-              <td>유료 강의 입금 확인 후 접근 허용</td>
+              <td>유료 강의 입금이 실제로 들어왔는지 확인</td>
+              <td>승인 시 해당 강의 접근 권한이 열림</td>
             </tr>
             <tr>
               <td>자소서·포트폴리오 첨삭</td>
-              <td>정규반 첨삭 요청 승인/반려</td>
+              <td>정규반 첨삭 요청을 접수/배정 가능한 상태로 넘김</td>
+              <td>승인·반려에 따라 회원 측 요청 상태가 바뀜</td>
             </tr>
             <tr>
               <td>후기 쿠폰 입금 등</td>
-              <td>프로모션성 입금/요청 처리 (메뉴에 보이면)</td>
+              <td>프로모션성 입금/요청을 검증</td>
+              <td>혜택·권한이 부여되거나 거절됨</td>
             </tr>
           </tbody>
         </table>
         <div class="callout warn">
-          확실하지 않은 승인/반려를 임의로 처리하지 마세요. 담당 팀 채널에 먼저 확인하는 게 안전합니다.
+          담당이 정해진 큐는 임의로 승인/반려하지 마세요.
+          확실하지 않으면 화면 URL과 건 정보를 붙여 담당 채널에 먼저 확인합니다.
         </div>
       </section>
 
-      <section id="season" data-search="시즌 조별활동 블로그 챌린지 스탬프 모집 입금 분반찾기">
-        <h2>8. 시즌 업무 (필요할 때만)</h2>
-        <p class="lead">평소엔 닫아두고, 시즌이 열리면 깊게 들어가면 됩니다.</p>
-        <div class="grid-2">
-          <article class="card">
-            <strong>조별활동</strong>
-            <p>활동 생성 → 정보 제출 → 팀 매칭 → 일지/채점 → 중도이탈 모니터링.</p>
-            <span class="path">정규반 → 조별활동</span>
-          </article>
-          <article class="card">
-            <strong>블로그 챌린지</strong>
-            <p>주차별 주제 등록 → 제출 확인 → 스탬프(승인) 지급.</p>
-            <span class="path">정규반 → 블로그 챌린지</span>
-          </article>
-          <article class="card">
-            <strong>학회원 모집</strong>
-            <p>모집 페이지/서베이 → 신청서 → 입금 CSV → 미매칭 큐 → 분반찾기.</p>
-            <span class="path">BDAI 학회원 모집 허브</span>
-          </article>
-          <article class="card">
-            <strong>BDAI Form</strong>
-            <p>구글폼 대신 쓰는 내부 폼. 공개 링크 복사 → 응답 승인 → 대시보드.</p>
-            <span class="path">/admin/bdai_forms/</span>
-          </article>
+      <!-- 9 -->
+      <section id="season" data-search="시즌 조별활동 블로그 챌린지 스탬프 모집 입금 분반찾기 form 목적">
+        <h2>9. 시즌 프로그램 — 평소엔 닫아두고, 열리면 깊게</h2>
+        <div class="purpose">
+          <span class="label">시즌 업무의 의미</span>
+          <p>
+            매주 반복되는 출결/과제와 달리, 아래는 <strong>기수·캠페인 단위로 열리는 프로그램</strong>입니다.
+            목적이 서로 다릅니다. “메뉴가 있으니 매일 들어간다”가 아니라
+            “지금 시즌이 열렸는지”를 기준으로 접근하세요.
+          </p>
         </div>
-        <div class="callout note">
-          조별활동·블로그는 이미 상세 내부 문서가 있습니다. 이 메뉴얼은 “존재와 진입점”만 잡고, 시즌 오픈 시 상세 런북을 링크해 고도화할 예정입니다.
+
+        <h3>9-1. 조별활동</h3>
+        <div class="prose">
+          <p>
+            <strong>목적:</strong> 분반 수업을 넘어, 팀 단위로 프로젝트/활동을 수행하게 하고
+            일지·채점·역할(조장)·중도이탈을 LMS에서 관리합니다.<br />
+            학회원은 희망 정보(요일·목적·조장 희망 등)를 제출하고 팀에 배정됩니다.
+            운영진은 활동 생성 → 자동/수동 매칭 → 일지·채점 → 조장 상점/중도이탈 벌점 액션을 처리합니다.
+          </p>
         </div>
+        <div class="flow">
+          <span>활동 생성</span><span class="arrow">→</span>
+          <span>정보 제출</span><span class="arrow">→</span>
+          <span>팀 매칭</span><span class="arrow">→</span>
+          <span>일지·채점</span><span class="arrow">→</span>
+          <span>상점/벌점·이탈 모니터링</span>
+        </div>
+
+        <h3>9-2. 블로그 챌린지</h3>
+        <div class="prose">
+          <p>
+            <strong>목적:</strong> 주차별 주제로 블로그/글을 쓰게 하고, 제출·승인(스탬프)으로 참여를 기록합니다.
+            학회원 마이페이지/정규반에서 분반별 스탬프가 보입니다.
+            운영진은 주제를 등록하고, 제출을 검수해 <strong>스탬프 지급(승인)</strong>합니다.
+            주차별 보너스 상점(히든 상점)이 있으면 주제의 보너스 점수를 설정한 뒤 액션으로 지급합니다.
+            (기수별 자동 상점 정책은 시즌마다 다를 수 있으니 시니어에게 확인하세요.)
+          </p>
+        </div>
+
+        <h3>9-3. 학회원 모집</h3>
+        <div class="prose">
+          <p>
+            <strong>목적:</strong> 새 기수를 모집할 때, 랜딩·설문·신청서·입금 확인·분반 추천을 LMS/모집 허브로 처리합니다.
+            입금 CSV로 자동 매칭하고, 안 맞는 건은 미매칭 큐에서 수동 처리합니다.
+            분반찾기 게임은 지원자가 성향 문항으로 분반을 탐색하게 돕는 공개 도구입니다.
+          </p>
+        </div>
+        <div class="flow">
+          <span>모집 페이지/서베이</span><span class="arrow">→</span>
+          <span>신청서</span><span class="arrow">→</span>
+          <span>입금 CSV</span><span class="arrow">→</span>
+          <span>미매칭 큐</span><span class="arrow">→</span>
+          <span>수강 배정으로 연결</span>
+        </div>
+
+        <h3>9-4. BDAI Form</h3>
+        <div class="prose">
+          <p>
+            <strong>목적:</strong> 구글폼 대신 LMS 내부에서 공개 폼을 만들고, 응답·승인·문항별 집계를 남깁니다.
+            응답자는 보통 로그인 없이 공개 링크(<code>/f/…/</code>)로 제출합니다.
+            운영·행사·내부 조사처럼 “폼 응답을 슬랙 알림과 함께 추적”해야 할 때 씁니다.
+          </p>
+        </div>
+        <ol class="steps">
+          <li>「BDAI Form」허브에서 폼·문항을 구성하고 접수 중을 켭니다.</li>
+          <li>화면에 보이는 <strong>전체 공개 URL</strong>을 복사해 공유합니다.</li>
+          <li>응답이 오면 승인/반려하고, 응답 대시보드에서 문항별 현황을 봅니다.</li>
+        </ol>
       </section>
 
+      <!-- 10 -->
       <section id="cheatsheet" data-search="url 치트시트 경로 링크 바로가기">
-        <h2>9. URL 치트시트</h2>
-        <p class="lead">북마크해두면 메뉴 헤매는 시간이 줄어듭니다. 도메인 앞에 실제 LMS 주소를 붙이세요.</p>
+        <h2>10. URL 치트시트</h2>
+        <p class="lead">앞에 실제 LMS 도메인을 붙이세요. 북마크용입니다.</p>
         <table>
           <thead>
-            <tr><th>용도</th><th>경로</th></tr>
+            <tr><th>목적</th><th>경로</th></tr>
           </thead>
           <tbody>
-            <tr><td>운영 홈</td><td><code>/admin/dashboard/</code></td></tr>
-            <tr><td>회원</td><td><code>/admin/accounts/user/</code></td></tr>
+            <tr><td>운영 홈 (출발점)</td><td><code>/admin/dashboard/</code></td></tr>
+            <tr><td>회원 승인·유형</td><td><code>/admin/accounts/user/</code></td></tr>
+            <tr><td>수강 배정 CSV</td><td><code>/admin/regulars/enrollment/import-csv/</code></td></tr>
             <tr><td>출석 CSV</td><td><code>/admin/regulars/attendancerecord/import-csv/</code></td></tr>
             <tr><td>상벌점 CSV</td><td><code>/admin/regulars/pointrecord/import-csv/</code></td></tr>
-            <tr><td>수강 CSV</td><td><code>/admin/regulars/enrollment/import-csv/</code></td></tr>
-            <tr><td>정규반 대시보드</td><td><code>/admin/regulars/dashboard/</code></td></tr>
+            <tr><td>정규반 현황</td><td><code>/admin/regulars/dashboard/</code></td></tr>
             <tr><td>기수 라인업</td><td><code>/admin/regulars/cohort-plan/</code></td></tr>
-            <tr><td>행사 신청 대시보드</td><td><code>/admin/notices/event-applications/dashboard/</code></td></tr>
-            <tr><td>B포인트</td><td><code>/admin/b-point/</code></td></tr>
+            <tr><td>행사 신청 현황</td><td><code>/admin/notices/event-applications/dashboard/</code></td></tr>
+            <tr><td>B포인트 지급</td><td><code>/admin/b-point/</code></td></tr>
             <tr><td>BDAI Form</td><td><code>/admin/bdai_forms/</code></td></tr>
-            <tr><td>강사 대시보드</td><td><code>/admin/instructors/dashboard/</code></td></tr>
+            <tr><td>강사 운영 현황</td><td><code>/admin/instructors/dashboard/</code></td></tr>
+            <tr><td>학회원 정규반 홈 (회원 화면)</td><td><code>/regular/</code></td></tr>
+            <tr><td>학회원 공지 (회원 화면)</td><td><code>/notices/</code></td></tr>
           </tbody>
         </table>
       </section>
 
-      <section id="help" data-search="도움 막힐때 daybear 에스컬레이션 faq">
-        <h2>10. 막힐 때</h2>
-        <p class="lead">혼자 메뉴를 전부 뒤지지 마세요.</p>
+      <!-- 11 -->
+      <section id="help" data-search="도움 막힐때 daybear 에스컬레이션 faq 질문">
+        <h2>11. 막힐 때</h2>
+        <div class="purpose">
+          <span class="label">질문하기 전에</span>
+          <p>
+            메뉴를 전부 열어보는 것보다,
+            “회원에게 어떤 상태를 만들고 싶은지”를 한 문장으로 말한 뒤 경로를 찾는 편이 빠릅니다.
+          </p>
+        </div>
         <ol class="steps">
-          <li>어드민 <strong>Daybear</strong>에서 키워드로 검색 (출석, 상벌점, 모집, 첨삭…)</li>
-          <li>이 메뉴얼 상단 검색창으로 관련 섹션을 찾기</li>
-          <li>그래도 불확실하면 담당 시니어에게 <em>화면 URL + 하려는 일 + 에러/결과 메시지</em>를 붙여 질문</li>
+          <li>어드민 <strong>Daybear</strong>에서 키워드 검색 (출석, 상벌점, 모집, 첨삭…)</li>
+          <li>이 메뉴얼 검색창으로 관련 섹션 찾기</li>
+          <li>시니어에게 질문할 때: <em>목적 한 줄 + 화면 URL + 한 일 + 에러/결과 메시지</em></li>
         </ol>
         <div class="callout tip">
-          <strong>좋은 질문 예시:</strong>
-          “출석 CSV 올렸는데 12건 중 2건 실패. URL은 …/import-csv/ 이고 메시지는 ‘회원 없음’입니다. 이메일 매칭 기준이 뭔가요?”
+          <strong>좋은 질문:</strong>
+          “13기 A분반 출석을 반영하려고 CSV를 올렸는데 12건 중 2건이 ‘회원 없음’입니다.
+          URL은 …/import-csv/ 이고, 해당 이메일은 회원 목록에 승인 상태로 보입니다. 매칭 기준이 뭔가요?”
         </div>
-        <h3>아직 이 메뉴얼에 없는 것</h3>
+        <h3>아직 이 메뉴얼에 얕게만 있는 것</h3>
         <p style="margin:0;color:var(--muted);">
-          광고·BDAIB, Knock 세부 운영, 캠퍼스맵, 기업분석, HR/비용, NEWTEAMZ/MOU, 배포/서버.
-          필요해지면 역할별 부록으로 추가할 예정입니다.
+          Knock 세부 운영, 광고·BDAIB, 캠퍼스맵, 기업분석, HR/비용, NEWTEAMZ/MOU, 배포/서버.
+          담당 역할이 생기면 목적 설명부터 부록으로 추가할 예정입니다.
         </p>
       </section>
 
       <p class="footer">
-        BDAI LMS Ops Manual · v0.1 · 핵심만 우선 정리 · 고도화용 베이스 문서
+        BDAI LMS Ops Manual · v0.2 · 목적 → 회원 경험 → 운영 작업 순으로 정리 · 고도화 중
       </p>
     </main>
   </div>
